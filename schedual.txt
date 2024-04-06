@@ -6,4 +6,4 @@ code camp ?
 build c# app 
 build complier 
 linux 
-test
+testing
