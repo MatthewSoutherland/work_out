@@ -1,7 +1,8 @@
 google it course 
+workout
+khan acedemy
+graph theory 
 code camp ?
 build c# app 
 build complier 
-graph theory 
-khan acedemy
-workout
+linux 
