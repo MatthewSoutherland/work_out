@@ -10,6 +10,7 @@
       ctx.setLineDash([5, 15]);
     }
     ctx.strokeStyle = color;
+    ctx.fillStyle = color;
     ctx.lineWidth = lineWidth;
 
     return [color, solidLine, lineWidth];
@@ -82,6 +83,39 @@
 
     ctx.beginPath();
     ctx.rect(scaled_x, scaled_y, scaled_w, scaled_h);
+    ctx.stroke();
+    ctx.closePath();
+    shapesCounter++;
+  }
+
+  function fillRectangle() {
+    closeAllModals();
+
+    let rx = getElementValue("fill-x");
+    let ry = getElementValue("fill-y");
+    let rw = getElementValue("fill-w");
+    let rh = getElementValue("fill-h");
+
+    [color, solidLine, lineWidth] = getDrawingDetails();
+
+    shapes[shapesCounter] = {
+      type: "rect",
+      rx: rx,
+      ry: ry,
+      rw: rw,
+      rh: rh,
+      color: color,
+      solidLine: solidLine,
+      lineWidth: lineWidth,
+    };
+
+    let scaled_x = parseFloat(rx) * pixelsPerInch * scaleFactor;
+    let scaled_y = parseFloat(ry) * pixelsPerInch * scaleFactor;
+    let scaled_w = parseFloat(rw) * pixelsPerInch * scaleFactor;
+    let scaled_h = parseFloat(rh) * pixelsPerInch * scaleFactor;
+
+    ctx.beginPath();
+    ctx.fillRect(scaled_x, scaled_y, scaled_w, scaled_h);
     ctx.stroke();
     ctx.closePath();
     shapesCounter++;
