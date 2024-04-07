@@ -1,0 +1,121 @@
+<div id="draw-line-modal-content" class="modal-content" style="display: none">
+  <div id="draw-line-modal-header" class="modal-header">
+    <span class="close" id="draw-line-span">&times;</span>
+  </div>
+  <div id="draw-line-div" class="div-row modal-elements-div">
+    <h5>Draw Line</h5>
+    <input type="text" id="x1" value="1" placeholder="x1" />
+    <input type="text" id="y1" value="1" placeholder="y1" />
+    <input type="text" id="x2" value="2" placeholder="x2" />
+    <input type="text" id="y2" value="2" placeholder="y2" />
+    <button type="button" id="draw-line-modal-button" class="primary-button modal-button" onclick="drawLine()">Draw Line</button>
+  </div>
+</div>
+
+<div id="draw-circle-modal-content" class="modal-content" style="display: none">
+  <div id="draw-circle-modal-header" class="modal-header">
+    <span class="close" id="draw-circle-span">&times;</span>
+  </div>
+  <div id="draw-circle-div" class="div-row modal-elements-div">
+    <h5>Draw Circle</h5>
+    <input type="text" id="cx" value="0" placeholder="x center" />
+    <input type="text" id="cy" value="0" placeholder="y center" />
+    <input type="text" id="cr" value=".5" placeholder="radius" />
+    <button type="button" id="draw-circle-modal-button" class="primary-button modal-button" onclick="drawCircle()">Draw Circle</button>
+  </div>
+</div>
+
+<div id="draw-rectangle-modal-content" class="modal-content" style="display: none">
+  <div id="draw-rectangle-modal-header" class="modal-header">
+    <span class="close" id="draw-rectangle-span">&times;</span>
+  </div>
+  <div id="draw-rectangle-div" class="div-row modal-elements-div">
+    <h5>Draw Rectangle</h5>
+    <input type="text" id="rx" value="-1" placeholder="rx" />
+    <input type="text" id="ry" value="-1" placeholder="ry" />
+    <input type="text" id="rw" value="1" placeholder="width" />
+    <input type="text" id="rh" value="1" placeholder="height" />
+    <button type="button" id="draw-rectangle-modal-button" class="primary-button modal-button" onclick="drawRectangle()">Draw Rectangle</button>
+  </div>
+</div>
+
+<div id="draw-arc-modal-content" class="modal-content" style="display: none">
+  <div id="draw-arc-modal-header" class="modal-header">
+    <span class="close" id="draw-arc-span">&times;</span>
+  </div>
+  <div id="draw-arc-div" class="div-row modal-elements-div">
+    <h5>Draw Arc</h5>
+    <input type="text" id="ax" value=".5" placeholder="x center line" />
+    <input type="text" id="ay" value=".5" placeholder="y center line" />
+    <input type="text" id="ar" value=".5" placeholder="radius" />
+    <input type="text" id="as" value="270" placeholder="start angle" />
+    <input type="text" id="ae" value="0" placeholder="end angle" />
+    <!-- radio button for cw ccw -->
+    <input type="radio" id="cw" name="direction" value="cw" checked />
+    <label for="cw">CW</label>
+    <input type="radio" id="ccw" name="direction" value="ccw" />
+    <label for="ccw">CCW</label>
+    <button type="button" id="draw-arc-modal-button" class="primary-button modal-button" onclick="drawArc()">Draw Arc</button>
+  </div>
+</div>
+
+<div id="add-text-modal-content" class="modal-content" style="display: none">
+  <div id="add-text-modal-header" class="modal-header">
+    <span class="close" id="add-text-span">&times;</span>
+  </div>
+  <div id="add-text-div" class="div-column modal-elements-div">
+    <h5>Add Text</h5>
+    <label for="text"
+      >Text:
+      <input type="text" id="text" value="Text" placeholder="text" />
+    </label>
+    <label for="tx"
+      >X:
+      <input type="text" id="tx" value="0" placeholder="x" />
+    </label>
+    <label for="ty"
+      >Y:
+      <input type="text" id="ty" value="0" placeholder="y" />
+    </label>
+    <label for="tsize"
+      >Size:
+      <input type="text" id="tsize" value="12" placeholder="size" />
+    </label>
+    <button type="button" id="add-text-modal-button" class="primary-button modal-button" onclick="addText()">Add Text</button>
+  </div>
+</div>
+
+<div id="show-shapes-modal-content" class="modal-content" style="display: none">
+  <div id="show-shapes-modal-header" class="modal-header">
+    <span class="close" id="show-shapes-span">&times;</span>
+  </div>
+  <div id="show-shapes-viewer"></div>
+</div>
+
+<div id="save-json-modal-content" class="modal-content" style="display: none">
+  <div id="save-json-modal-header" class="modal-header">
+    <span class="close" id="save-json-span">&times;</span>
+  </div>
+  <div id="save-json-div" class="div-row modal-elements-div">
+    <h5>Save JSON</h5>
+    <label for="save-json-filename">File Name</label>
+    <input type="text" id="save-json-filename" value="drawing" placeholder="file name" />
+    <button type="button" id="save-json-modal-button" class="primary-button modal-button" onclick="saveJson()">SAVE</button>
+  </div>
+</div>
+
+<div id="load-json-modal-content" class="modal-content" style="display: none">
+  <div id="load-json-modal-header" class="modal-header">
+    <span class="close" id="load-json-span">&times;</span>
+  </div>
+  <div id="load-json-div" class="div-row modal-elements-div">
+    <label for="existing-files" class="floating-label">Existing Files</label>
+    <select class="select-box" id="existing-files">
+      <option value="none"></option>
+      {% for file in files %}
+      <option value="{{file}}">{{file}}</option>
+      {%endfor%}
+    </select>
+    <button type="button" id="load-json-modal-button" class="primary-button modal-button" onclick="loadJson()">LOAD</button>
+  </div>
+</div>

@@ -1,0 +1,102 @@
+<div class="input-container" id="point-machining-general">
+  <div class="div-column">
+    <div class="div-row">
+      <label for="safeHeight">Safe height</label>
+      <input type="text" class="safeHeight" id="safeHeight" value="6" title="Height that will clear everything" />
+    </div>
+
+    <div class="div-row unit-dropdown">
+      <label for="work-offsets" class="floating-label unit-label">Offsets:</label>
+      <select class="select-box work-offset" id="work-offsets" onchange="clearPvalue()">
+        <option value="G54">G54</option>
+        <option value="G55">G55</option>
+        <option value="G56">G56</option>
+        <option value="G54">G57</option>
+        <option value="G55">G58</option>
+        <option value="G56">G59</option>
+        <option value="G54.1">G54.1</option>
+      </select>
+      <label for="pNumber">P Number</label>
+      <input type="text" class="pNum" id="pNumber" onchange="switchOffset()" placeholder="enter" />
+    </div>
+  </div>
+</div>
+
+<div class="input-container" id="drilling" >
+  <div class="div-column">
+    <div class="div-row">
+      <label for="drilling-zFace">Face (start drilling)</label>
+      <!-- removed clear class for testing -->
+      <input type="text" id="drilling-zFace" data-validation="is-numeric another and-another" placeholder="Z value" value="0" title="Height of face to start drilling" />
+    </div>
+
+    <div class="div-row">
+      <label for="drilling-holeDiameter">Hole Diameter</label>
+      <input type="text" data-validation="positive-number mkay" value="1" id="drilling-holeDiameter" placeholder="enter" />
+    </div>
+
+    <div class="div-row">
+      <label for="drilling-holeDepth">Hole Depth</label>
+      <input type="text" data-validation="is-numeric make-negative" value="1" id="drilling-holeDepth" placeholder="enter" />
+    </div>
+
+    <div id="drilling-add-drill-div" class="tooling-checkbox-elements">
+      <div class="div-row removable-div">
+        <label for="drill-message">message (tool path header)</label
+        ><textarea id="drill-message" class="clear tool-message" data-validation="is-not-empty" rows="2" cols="30" title="Enter a header to be placed above tool path. Max length 100 characters">
+drilling 1" diameter in drilling unit</textarea
+        >
+      </div>
+      <div class="div-row removable-div">
+        <label for="drill-tool-number">Tool Number</label><input type="text" class="clear" data-validation="to-whole-number" id="drill-tool-number" placeholder="Enter" value="2" title="Number of tool" />
+      </div>
+      <div class="div-row removable-div">
+        <label for="drill-zFace">Face (start drilling)</label><input type="text" class="clear" data-validation="is-numeric" id="drill-zFace" placeholder="Z value" value="0" title="Z face value to start" />
+      </div>
+      <div class="div-row removable-div">
+        <label for="drill-toolDiameter">Tool Diameter</label><input type="text" class="clear" data-validation="positive-number" id="drill-toolDiameter" placeholder="Enter" value="1" title="Diameter of tool" />
+      </div>
+      <div class="div-row removable-div">
+        <label for="drill-peckDistance">Pecking Distance</label
+        ><input type="text" class="clear" data-validation="make-zero" id="drill-peckDistance" placeholder="Enter" value="0" title="will not peck if 0, or no value is assigned" />
+      </div>
+      <div class="div-row removable-div">
+        <label for="drill-toolDepth">Tool Depth</label>
+        <input type="text" class="clear" data-validation="positive-number" id="drill-toolDepth" placeholder="Enter" value="1" title="Depth of tool" />
+      </div>
+      <div class="div-row removable-div">
+        <label for="drill-rpm">Rpm</label
+        ><input
+          type="text"
+          class="clear validate-positive-number validate-to-int"
+          data-validation="to-integer positive-number"
+          id="drill-rpm"
+          placeholder="RPM"
+          title="Revolutions per minute"
+          value="2139.20"
+        /><input type="text" class="clear" id="drill-sfm" placeholder="SFM" title="Surface footage per minute"  value="560.00" />
+      </div>
+      <div class="div-row removable-div">
+        <label for="drill-ipm">Feed</label>
+        <input type="text" class="clear" data-validation="positive-number" id="drill-ipm" placeholder="IPM" title="Inches per minute" value="22.0"  />
+        <input
+          type="text"
+          class="clear"
+          data-validation="positive-number"
+          id="drill-ipr"
+          placeholder="IPR"
+          title="Inches per revolution"
+        />
+      </div>
+      <div class="div-row removable-div">
+        <label for="drill-coolant-air">Air-Coolant:</label
+        ><select class="clear select-box select-box-coolant-air" id="drill-coolant-air" data-validation="coolant-air">
+          <option value="coolant_on">Coolant</option>
+          <option value="thru_coolant_on">Thru Spindle coolant</option>
+          <option value="air_blast_on">Air Blast</option>
+          <option value="none">None</option>
+        </select>
+      </div>
+    </div>
+  </div>
+</div>

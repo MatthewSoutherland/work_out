@@ -1,0 +1,100 @@
+:root {
+    --modal-background-color: rgba(0, 0, 0, 0.4); /* Black with opacity */
+    --modal-content-background-color: rgb(254, 254, 254);
+    --modal-header-background-color: #f1f1f1;
+    --modal-border-color: rgb(136, 136, 136);
+    --modal-close-button-color: rgb(170, 170, 170);
+    --modal-close-button-hover-color: rgb(0, 0, 0);
+  }
+  
+  /* The Modal (background) */
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 4;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; /* Enable scroll if needed */
+    background-color: var(--modal-background-color);
+  }
+  
+  /* Modal Content/Box */
+  .modal-content {
+    position: absolute; /* or fixed, depending on your needs */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--modal-content-background-color);
+    border: 1px solid var(--modal-border-color);
+    padding: 20px;
+    z-index: 4;
+  }
+  
+  .modal-content *:not(button):not(.modal-header) {
+    /* This will target every element inside .modal-content */
+    background-color: var(--modal-content-background-color); /* Make background color the same as the modal content */
+  }
+  
+  .modal-header {
+    padding: 10px;
+    cursor: move;
+    background-color: var(--modal-header-background-color);
+    color: #333; 
+    border-bottom: 1px solid #ddd; 
+    margin: -20px -20px 0px -20px; /* Top, Right, Bottom, Left */
+  }
+  
+  /* The Close Button */
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    color: var(--modal-close-button-color);
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+    color: var(--modal-close-button-hover-color);
+  }
+  
+  #draw-line-modal-content {
+    width: 50%;
+  }
+
+#add-text-modal-content {
+    width: 15rem;
+}
+
+#show-shapes-viewer {
+  display: flex;
+  flex-wrap: wrap; /* This allows items to wrap to the next line */
+  max-height: 500px; /* Adjust based on your modal size */
+  overflow-y: auto; /* Adds vertical scroll if content overflows */
+}
+#show-shapes-viewer .div-column {
+  margin-right: 20px; /* Adds some space between columns */
+  flex-basis: calc(33.333% - 20px); /* Adjust the width per item, subtract margin */
+}
+
+#show-shapes-viewer div {
+    padding: 0;
+    margin: .3rem;
+}
+
+.show-shapes-input {
+    width: 3rem;
+    text-indent: .1rem;
+    border-radius: .1rem;
+    margin-left: .2rem;
+}
+
+.modal-elements-div {
+    padding: 0;
+    margin: .3rem;
+}

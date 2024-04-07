@@ -1,0 +1,111 @@
+{
+    "0": {
+        "color": "blue",
+        "lineWidth": "2",
+        "rh": "5",
+        "rw": "5",
+        "rx": "-2.5",
+        "ry": "-2.5",
+        "solidLine": "true",
+        "type": "rect"
+    },
+    "1": {
+        "color": "black",
+        "lineWidth": "2",
+        "solidLine": "true",
+        "type": "line",
+        "x1": "1.5",
+        "x2": "1.5",
+        "y1": "-4",
+        "y2": "4"
+    },
+    "2": {
+        "color": "black",
+        "lineWidth": "2",
+        "solidLine": "true",
+        "type": "line",
+        "x1": "-1.5",
+        "x2": "-1.5",
+        "y1": "-4",
+        "y2": "4"
+    },
+    "3": {
+        "color": "black",
+        "lineWidth": "2",
+        "solidLine": "true",
+        "type": "line",
+        "x1": "0",
+        "x2": "0",
+        "y1": "-4",
+        "y2": "4"
+    },
+    "4": {
+        "color": "black",
+        "cr": "1.",
+        "cx": "-1.5",
+        "cy": "-4",
+        "lineWidth": "2",
+        "solidLine": "true",
+        "type": "circle"
+    },
+    "5": {
+        "color": "darkblue",
+        "fontSize": "46",
+        "lineWidth": "1",
+        "solidLine": "true",
+        "text": "1",
+        "type": "text",
+        "x": "-1.64",
+        "y": "4.1"
+    },
+    "6": {
+        "color": "darkblue",
+        "fontSize": "46",
+        "lineWidth": "1",
+        "solidLine": "true",
+        "text": "2",
+        "type": "text",
+        "x": "-.14",
+        "y": "4.1"
+    },
+    "7": {
+        "color": "darkblue",
+        "fontSize": "46",
+        "lineWidth": "1",
+        "solidLine": "true",
+        "text": "3",
+        "type": "text",
+        "x": "1.36",
+        "y": "4.1"
+    },
+    "10": {
+        "color": "black",
+        "lineWidth": "1",
+        "rh": "11",
+        "rw": "7",
+        "rx": "-3.5",
+        "ry": "-5.5",
+        "solidLine": "true",
+        "type": "rect"
+    },
+    "13": {
+        "type": "line",
+        "x1": "1.5",
+        "y1": "-4",
+        "x2": "0",
+        "y2": "4",
+        "color": "red",
+        "solidLine": false,
+        "lineWidth": "2"
+    },
+    "14": {
+        "type": "line",
+        "x1": "0",
+        "y1": "-4",
+        "x2": "-1.5",
+        "y2": "4",
+        "color": "red",
+        "solidLine": false,
+        "lineWidth": "2"
+    }
+}

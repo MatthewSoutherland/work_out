@@ -1,0 +1,21 @@
+{% extends 'layout.html' %}
+{% block title %}Drawing{% endblock %}
+
+{% block main %}
+    <div class="drawClass-container">
+        <div id="box-1"></div>
+        <div id="box-2"></div>
+        <div id="box-3"></div>
+        <div id="box-4"></div>
+        <div id="box-5"></div>
+        <div id="box-6"></div>
+        <div id="box-7"></div>
+        <div id="box-8"></div>
+        <div id="box-9">
+            <button type="button" class="primary-button" onclick="drawCanvasOne()">Box-1</button>
+            <button type="button" class="primary-button" onclick="drawCanvasOne1()">Draw</button>
+            <button type="button" class="primary-button" onclick="drawCanvasTwo()">Box-2</button>
+            <button type="button" class="primary-button" onclick="drawCanvasTwo1()">Draw 2</button>
+        </div>
+    </div>
+{% endblock %}

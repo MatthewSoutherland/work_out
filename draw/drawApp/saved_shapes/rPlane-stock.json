@@ -1,0 +1,102 @@
+{
+    "0": {
+        "color": "blue",
+        "lineWidth": "2",
+        "solidLine": "true",
+        "type": "line",
+        "x1": "-1",
+        "x2": "1",
+        "y1": "0",
+        "y2": "0"
+    },
+    "1": {
+        "color": "blue",
+        "lineWidth": "2",
+        "solidLine": "true",
+        "type": "line",
+        "x1": "-1",
+        "x2": "-1",
+        "y1": "0",
+        "y2": "-1"
+    },
+    "2": {
+        "color": "blue",
+        "lineWidth": "2",
+        "solidLine": "true",
+        "type": "line",
+        "x1": "1",
+        "x2": "1.0",
+        "y1": "0",
+        "y2": "-1"
+    },
+    "3": {
+        "color": "black",
+        "lineWidth": "2",
+        "solidLine": true,
+        "type": "line",
+        "x1": "1.1",
+        "x2": "1.6",
+        "y1": "0",
+        "y2": "0"
+    },
+    "4": {
+        "color": "black",
+        "fontSize": "12",
+        "lineWidth": "1",
+        "solidLine": "true",
+        "text": "Z Face Z(0.0)",
+        "type": "text",
+        "x": "1.65",
+        "y": "-.05"
+    },
+    "5": {
+        "color": "black",
+        "lineWidth": "2",
+        "solidLine": "true",
+        "type": "line",
+        "x1": "1.1",
+        "x2": "1.6",
+        "y1": ".2",
+        "y2": ".2"
+    },
+    "6": {
+        "color": "black",
+        "fontSize": "12",
+        "lineWidth": "2",
+        "solidLine": "true",
+        "text": "R Plane: Stock + .1",
+        "type": "text",
+        "x": "1.65",
+        "y": "-.46"
+    },
+    "7": {
+        "color": "black",
+        "fontSize": "12",
+        "lineWidth": "2",
+        "solidLine": "true",
+        "text": "R Plane Default Calculation: Z Face + Stock + .1",
+        "type": "text",
+        "x": "-1.3",
+        "y": "-.76"
+    },
+    "8": {
+        "type": "line",
+        "x1": "1.1",
+        "y1": ".4",
+        "x2": "1.6",
+        "y2": ".4",
+        "color": "black",
+        "solidLine": "true",
+        "lineWidth": "2"
+    },
+    "9": {
+        "type": "text",
+        "text": "Stock + Z Face",
+        "x": "1.65",
+        "y": "-.25",
+        "fontSize": "12",
+        "color": "black",
+        "solidLine": "true",
+        "lineWidth": "2"
+    }
+}

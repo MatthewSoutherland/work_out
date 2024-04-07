@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style_sheets/styles.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style_sheets/buttons.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style_sheets/modals.css') }}" />
+
+    {%block head%}
+    <title>{% block title %} {% endblock %}</title>
+    {%endblock%}
+  </head>
+  <body>
+    <div id="program-container">
+      <div class="navbar">
+        <div id="nav-links">
+          <a class="nav-link" aria-current="page" href="{{ url_for('home_bp.home') }}">Home</a>
+          <a class="nav-link" href="{{ url_for('home_bp.validation') }}">Validation</a>
+          <a class="nav-link" href="{{ url_for('home_bp.draw') }}">Draw Class</a>
+        </div>
+      </div>
+      <div id="container">
+          {% block main %} {% endblock %}
+      </div>
+    </div>
+    <!-- Optional JavaScript -->
+    
+
+    <script src="{{ url_for('static', filename='main.js') }}"></script>
+    <script src="{{ url_for('static', filename='canvasDrawingClass.js') }}"></script>
+    <script src="{{ url_for('static', filename='dClass.js') }}"></script>
+    <script src="{{ url_for('static', filename='elementCreate.js') }}"></script>
+    <script src="{{ url_for('static', filename='modals.js') }}"></script>
+    <script src="{{ url_for('static', filename='val/fields.js') }}"></script>
+    <script src="{{ url_for('static', filename='val/validation.js') }}"></script>
+    <script src="{{ url_for('static', filename='val/valTest.js') }}"></script>
+    <script src="{{ url_for('static', filename='canvas/canvas.js') }}"></script>
+    <script src="{{ url_for('static', filename='canvas/draw.js') }}"></script>
+    <script src="{{ url_for('static', filename='canvas/move.js') }}"></script>
+   
+  </body>
+</html>

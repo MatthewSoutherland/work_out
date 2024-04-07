@@ -1,0 +1,255 @@
+:root {
+    /* primary-colors */
+    --primary-button-background: rgb(40, 90, 230);
+    --primary-button-hover-background: rgb(20, 70, 210);
+    --primary-button-active-background: rgb(20, 40, 200);
+
+    --insert-button-background: rgb(70, 210, 10);
+    --insert-button-hover-background: rgb(50, 190, 10);
+    --insert-button-active-background: rgb(30, 170, 10);
+
+    --delete-button-background: rgb(230, 15, 15);
+    --delete-button-hover-background: rgb(200, 15, 15);
+    --delete-button-active-background: rgb(170, 15, 15);
+
+    --unit-button-background: rgb(75, 30, 30);
+    --unit-button-hover-background: rgb(55, 10, 10);
+    --unit-button-active-background: rgb(35, 10, 10);
+
+    /* softer-colors */
+    --light-blue-button-background: rgb(50, 170, 250);
+    --light-blue-button-hover-background: rgb(40, 150, 250);
+    --light-blue-button-active-background: rgb(30, 130, 250);
+
+    --grey-button-background: rgb(170, 170, 170);
+    --grey-button-hover-background: rgb(150, 150, 150);
+    --grey-button-active-background: rgb(130, 130, 130);
+
+    --light-grey-button-background: rgb(211, 211, 211);
+    --light-grey-button-hover-background: rgb(191, 191, 191);
+    --light-grey-button-active-background: rgb(171, 171, 171);
+    
+    /* text-colors */
+    --button-text-color: black;
+    --button-text-color-white: white;
+}
+
+.primary-button {
+    background-color: var(--primary-button-background); 
+    color: var(--button-text-color-white);
+    border: 2px solid black;
+    border-radius: .2rem;
+    transition: background-color 0.3s, border-color 0.3s, color 0.3s; 
+    cursor: pointer;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.primary-button:hover {
+    background-color: var(--primary-button-hover-background); 
+}
+
+.primary-button:active {
+    background-color: var(--primary-button-active-background); 
+    transform: translate(.05rem, .05rem);
+}
+
+.insert-button {
+    background-color: var(--insert-button-background); 
+    color: var(--button-text-color-white);
+    border: 2px solid black;
+    border-radius: .2rem;
+    transition: background-color 0.3s, border-color 0.3s, color 0.3s; 
+    cursor: pointer;
+    font-family: Helvetica;
+}
+
+.insert-button:hover {
+    background-color: var(--insert-button-hover-background); 
+}
+
+.insert-button:active {
+    background-color: var(--insert-button-active-background); 
+    transform: translate(.05rem, .05rem);
+}
+
+.delete-button {
+    background-color: var(--delete-button-background); 
+    color: var(--button-text-color-white);
+    border: 2px solid black;
+    border-radius: .2rem;
+    transition: background-color 0.3s, border-color 0.3s, color 0.3s; 
+    cursor: pointer;
+    font-family: Helvetica;
+}
+
+.delete-button:hover {
+    background-color: var(--delete-button-hover-background); 
+}
+
+.delete-button:active {
+    background-color: var(--delete-button-active-background); 
+    transform: translate(.05rem, .05rem);
+}
+
+.light-blue-button {
+    background-color: var(--light-blue-button-background); 
+    color: var(--button-text-color-white);
+    border: 2px solid black;
+    border-radius: .2rem;
+    transition: background-color 0.3s, border-color 0.3s, color 0.3s; 
+    cursor: pointer;
+    font-family: Arial, Helvetica, sans-serif;
+    text-shadow: 
+        -0.5px -0.5px 0 #000,  
+         0.5px -0.5px 0 #000,
+        -0.5px  0.5px 0 #000,
+         0.5px  0.5px 0 #000;
+}
+
+
+.light-blue-button:hover {
+    background-color: var(--light-blue-button-hover-background); 
+}
+
+.light-blue-button:active {
+    background-color: var(--light-blue-button-active-background); 
+    transform: translate(.05rem, .05rem);
+}
+
+.grey-button {
+    background-color: var(--grey-button-background); 
+    color: var(--button-text-color);
+    border: 2px solid black;
+    border-radius: .2rem;
+    transition: background-color 0.3s, border-color 0.3s, color 0.3s; 
+    cursor: pointer;
+    font-family: Helvetica;
+    font-weight: 600;
+}
+
+.grey-button:hover {
+    background-color: var(--grey-button-hover-background); 
+}
+
+.grey-button:active {
+    background-color: var(--grey-button-active-background); 
+    transform: translate(.05rem, .05rem);
+}
+
+.light-grey-button {
+    background-color: var(--light-grey-button-background); 
+    color: var(--button-text-color);
+    border: 2px solid black;
+    border-radius: .2rem;
+    transition: background-color 0.3s, border-color 0.3s, color 0.3s; 
+    cursor: pointer;
+    font-family: Helvetica;
+}
+
+.light-grey-button:hover {
+    background-color: var(--light-grey-button-hover-background); 
+}
+
+.light-grey-button:active {
+    background-color: var(--light-grey-button-active-background); 
+    transform: translate(.05rem, .05rem);
+}
+.modal-button {
+    padding: 0.5rem;
+    margin: 0.5rem;
+}
+.ui-button {
+    height: 1.4rem;
+}
+
+#solid-line-div {
+    position: absolute;
+    top: 1rem;
+    left: 52rem;
+}
+
+#solid-line-div input {
+    margin-left: 2rem;
+}
+
+#line-width-div {
+    position: absolute;
+    top: 1rem;
+    left: 43rem;
+}
+
+#line-width {
+    height: 1.5rem;
+    width: 3rem;
+}
+
+
+#draw-color-div {
+    position: absolute;
+    top: 1rem;
+    left: 32.5rem;
+}
+
+#draw-color {
+    height: 1.5rem;
+    width: 5rem;
+}
+
+#draw-line-button {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+}
+#draw-circle-button {
+    position: absolute;
+    top: 1rem;
+    left: 5.5rem;
+}
+#draw-rectangle-button {
+    position: absolute;
+    top: 1rem;
+    left: 10.5rem;
+}
+#draw-arc-button {
+    position: absolute;
+    top: 1rem;
+    left: 17.3rem;
+}
+
+#add-text-button {
+    position: absolute;
+    top: 1rem;
+    left: 21.5rem;
+}
+
+#save-json-button {
+    position: absolute;
+    top: 2.5rem;
+    left: 7rem;
+}
+
+#load-json-button {
+    position: absolute;
+    top: 2.5rem;
+    left: 12.5rem;
+}
+
+#reDraw-canvas-button {
+    position:absolute;
+    top: 1rem;
+    left: 25.6rem;
+}
+
+#show-all-shapes-button {
+    position: absolute;
+    top: 2.5rem;
+    left: 1rem;
+}
+
+
+.val-button {
+    margin-left: 1rem;
+    margin-top: .1rem;
+    margin-bottom: .1rem;
+    max-height: 2rem;
+  }

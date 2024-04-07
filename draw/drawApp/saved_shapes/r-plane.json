@@ -1,0 +1,82 @@
+{
+    "0": {
+        "type": "line",
+        "x1": "-1",
+        "y1": "0",
+        "x2": "1",
+        "y2": "0",
+        "color": "blue",
+        "solidLine": "true",
+        "lineWidth": "2"
+    },
+    "1": {
+        "type": "line",
+        "x1": "-1",
+        "y1": "0",
+        "x2": "-1",
+        "y2": "-1",
+        "color": "blue",
+        "solidLine": "true",
+        "lineWidth": "2"
+    },
+    "2": {
+        "type": "line",
+        "x1": "1",
+        "y1": "0",
+        "x2": "1.0",
+        "y2": "-1",
+        "color": "blue",
+        "solidLine": "true",
+        "lineWidth": "2"
+    },
+    "3": {
+        "type": "line",
+        "x1": "1.1",
+        "y1": "0",
+        "x2": "1.6",
+        "y2": "0",
+        "color": "black",
+        "solidLine": true,
+        "lineWidth": "2"
+    },
+    "4": {
+        "type": "text",
+        "text": "Z Face Z(0.0)",
+        "x": "1.65",
+        "y": "-.05",
+        "fontSize": "12",
+        "color": "black",
+        "solidLine": "true",
+        "lineWidth": "1"
+    },
+    "5": {
+        "type": "line",
+        "x1": "1.1",
+        "y1": ".2",
+        "x2": "1.6",
+        "y2": ".2",
+        "color": "black",
+        "solidLine": "true",
+        "lineWidth": "2"
+    },
+    "6": {
+        "type": "text",
+        "text": "R Plane Z(.1)",
+        "x": "1.65",
+        "y": "-.25",
+        "fontSize": "12",
+        "color": "black",
+        "solidLine": "true",
+        "lineWidth": "2"
+    },
+    "7": {
+        "type": "text",
+        "text": "R Plane Default Calculation: Z Face + .1",
+        "x": "-1",
+        "y": "-.5",
+        "fontSize": "12",
+        "color": "black",
+        "solidLine": "true",
+        "lineWidth": "2"
+    }
+}
