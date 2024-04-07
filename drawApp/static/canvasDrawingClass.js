@@ -294,15 +294,17 @@ class DrawingCanvas {
   }
 
   setLineDash(isSolid) {
-    if (isSolid === false) {
+    if (isSolid == "false") {
       this.ctx.setLineDash([5, 5]);
+      console.log("dashed line called")
     } else {
+      console.log("solid line called")
       this.ctx.setLineDash([]);
     }
   }
 
   deleteShape(id) {
-    this.shapes = this.shapes.filter(shape => shape.id !== id);
+    this.shapes = this.shapes.filter(shape => shape.id.toString() !== id.toString());
   }
 
   logShapeData() {
@@ -312,6 +314,23 @@ class DrawingCanvas {
   getShapeData() {
     return this.shapes;
   }
+
+  getShape(key) {
+    return this.shapes.find(shape => shape.id.toString() === key.toString());
+  }
+  
+
+  editShape(key, attr, value) {
+    let shape = this.getShape(key);
+    if (shape) {
+      shape[attr] = value;
+    } else {
+      console.error(`Shape not found for key: ${key}`);
+    }
+  }
+  
+
+  
 
   // settings: lineWidth, color, solidLine, etc.
   // Other methods for your class...

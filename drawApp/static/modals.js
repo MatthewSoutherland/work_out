@@ -79,7 +79,8 @@ function closeModal(elementId) {
         let label = createElement("label", {class: "label",}, `${attr}: `);
         let input = createElement("input", {
           class: "show-shapes-input",
-          id: `${i}-${attr}`,
+          id: `${id}-${attr}`,
+          "data-key": `${id}`,
           style: `font-weight: ${fontWeight}`,
           value: shape[attr],
         });
@@ -104,18 +105,23 @@ function closeModal(elementId) {
   }
 
   function deleteShapeModalFunction(key) {
-    const elementId = "delete-shape-modal";
-    console.log(`key: ${key}`);
     canvasMain.deleteShape(key);
     showShapes();
   }
 
   function editShapeModalFunction(key) {
     // build a function to grab all the element values based on `${key}-${attr}`, and update the shapes object
-    let shape = shapes[key];
+    const shape = canvasMain.getShape(key);
+    console.log(JSON.stringify(shape, null, 2));
     for (let attr in shape) {
       let element = document.getElementById(`${key}-${attr}`);
-      shape[attr] = element.value;
+      if (element) {
+        canvasMain.editShape(key, attr, element.value);
+        console.log(`key: ${key} attr: ${attr} element.value: ${element.value}`);
+      } else {
+        console.warn(`Element not found for key: ${key}, attr: ${attr}`);
+      }
+      
     }
-    document.getElementById("show-shapes-modal").style.display = "none";
   }
+  
