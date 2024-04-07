@@ -1,7 +1,10 @@
 
+function closeModal(elementId) {
+    document.getElementById(elementId).style.display = "none";
+}
   function drawLineModalFunction() {
     activeModal = "draw-line";
-    dragElement(document.getElementById(`${activeModal}-modal-content`));
+    dragElement();
     drawLineModal.style.display = "block";
   }
 
