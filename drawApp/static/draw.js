@@ -22,21 +22,6 @@
 
     canvasMain.drawLine(x1, x2, y1, y2, color, solidLine, lineWidth);
 
-    //shapes[shapesCounter] = {
-    //  type: "line",
-    //  x1: x1,
-    //  y1: y1,
-    //  x2: x2,
-    //  y2: y2,
-    //  color: color,
-    //  solidLine: solidLine,
-    //  lineWidth: lineWidth,
-    //};
-    //let xStart = parseFloat(x1) * pixelsPerInch * scaleFactor;
-    //let yStart = parseFloat(y1) * pixelsPerInch * scaleFactor;
-    //let xEnd = parseFloat(y2) * pixelsPerInch * scaleFactor;
-    //let yEnd = parseFloat(y2) * pixelsPerInch * scaleFactor;
-
     drawLineModal.style.display = "none";
   }
 
@@ -51,21 +36,6 @@
 
     canvasMain.drawRectangle(rx, ry, rw, rh, color, solidLine, lineWidth);
 
-    //shapes[shapesCounter] = {
-    //  type: "rect",
-    //  rx: rx,
-    //  ry: ry,
-    //  rw: rw,
-    //  rh: rh,
-    //  color: color,
-    //  solidLine: solidLine,
-    //  lineWidth: lineWidth,
-    //};
-    //let scaled_x = parseFloat(rx) * pixelsPerInch * scaleFactor;
-    //let scaled_y = parseFloat(ry) * pixelsPerInch * scaleFactor;
-    //let scaled_w = parseFloat(rw) * pixelsPerInch * scaleFactor;
-    //let scaled_h = parseFloat(rh) * pixelsPerInch * scaleFactor;
-
     drawRectModal.style.display = "none";
   }
 
@@ -79,24 +49,6 @@
     [color, solidLine, lineWidth] = getDrawingDetails('circle');
   
     canvasMain.drawCircle(cx, cy, cr, color, solidLine, lineWidth);
-
-    //shapes[shapesCounter] = {
-    //  type: "circle",
-    //  cx: cx,
-    //  cy: cy,
-    //  cr: cr,
-    //  color: color,
-    //  solidLine: solidLine,
-    //  lineWidth: lineWidth,
-    //};
-    //let scaled_x = parseFloat(cx) * pixelsPerInch * scaleFactor;
-    //let scaled_y = parseFloat(cy) * pixelsPerInch * scaleFactor;
-    //let scaled_r = parseFloat(cr) * pixelsPerInch * scaleFactor;
-
-    //ctx.beginPath();
-    //ctx.arc(scaled_x, scaled_y, scaled_r, 0, 2 * Math.PI, false);
-    //ctx.stroke();
-    //ctx.closePath();
 
     drawCircleModal.style.display = "none";
   }
@@ -114,30 +66,6 @@
 
     canvasMain.drawArc(ax, ay, ar, astart, aend, direction, color, solidLine, lineWidth);
 
-    //shapes[shapesCounter] = {
-    //  type: "arc",
-    //  ax: ax,
-    //  ay: ay,
-    //  ar: ar,
-    //  astart: astart,
-    //  aend: aend,
-    //  direction: direction,
-    //  color: color,
-    //  solidLine: solidLine,
-    //  lineWidth: lineWidth,
-    //};
-    //let scaled_x = parseFloat(ax) * pixelsPerInch * scaleFactor;
-    //let scaled_y = parseFloat(ay) * pixelsPerInch * scaleFactor;
-    //let scaled_r = parseFloat(ar) * pixelsPerInch * scaleFactor;
-    //// convert to radians
-    //let scaled_start = parseFloat(astart) * (Math.PI / 180);
-    //let scaled_end = parseFloat(aend) * (Math.PI / 180);
-
-    //ctx.beginPath();
-    //ctx.arc(scaled_x, scaled_y, scaled_r, scaled_start, scaled_end, direction);
-    //ctx.stroke();
-    //ctx.closePath();
-
     drawArcModal.style.display = "none";
   }
 
@@ -153,27 +81,6 @@
 
     canvasMain.addText(text, x, y, fontSize, fontColor, fontType);
 
-    
-    //shapes[shapesCounter] = {
-    //  type: "text",
-    //  text: text,
-    //  x: x,
-    //  y: y,
-    //  fontSize: fontSize,
-    //  color: fontColor,
-    //  fontType: fontType,
-    //};
-    //let scaledX = parseFloat(x) * pixelsPerInch * scaleFactor;
-    //let scaledY = parseFloat(y) * pixelsPerInch * scaleFactor;
-    //let scaledFontSize = parseFloat(fontSize) * pixelsPerInch * scaleFactor;
-
-    //ctx.scale(1, -1);
-    //ctx.font = `${scaledFontSize}px Arial`;
-    //ctx.fillStyle = color;
-    //ctx.textBaseline = "top";
-    //ctx.fillText(text, scaledX, scaledY);
-    //ctx.scale(1, -1);
-    //ctx.closePath();
     addTextModal.style.display = "none";
   }
 
