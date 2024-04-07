@@ -301,6 +301,10 @@ class DrawingCanvas {
     }
   }
 
+  deleteShape(id) {
+    this.shapes = this.shapes.filter(shape => shape.id !== id);
+  }
+
   logShapeData() {
     console.log(JSON.stringify(this.shapes, null, 2));
   }

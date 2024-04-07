@@ -71,7 +71,7 @@ function closeModal(elementId) {
       let divCol = createElement("div", {
         class: "div-column border",
       });
-
+      id = shape.id;
       for (let attr in shape) {
         let fontWeight = "normal";
         if (attr === "type") fontWeight = "bold";
@@ -90,11 +90,11 @@ function closeModal(elementId) {
       let divRow = createElement("div", {class: "div-row",});
       let editButton = createElement("button", {
         class: "insert-button modal-button",
-        onclick: `editShapeModalFunction(${i})`,
+        onclick: `editShapeModalFunction(${id})`,
       }, "EDIT");
       let deleteButton = createElement("button", {
         class: "delete-button insert-button modal-button",
-        onclick: `deleteShapeModalFunction(${i})`,
+        onclick: `deleteShapeModalFunction(${id})`,
       }, "DELETE");
       divRow.appendChild(editButton);
       divRow.appendChild(deleteButton);
@@ -105,9 +105,9 @@ function closeModal(elementId) {
 
   function deleteShapeModalFunction(key) {
     const elementId = "delete-shape-modal";
-    delete shapes[key];
-    document.getElementById("show-shapes-modal").style.display = "none";
-    showShapesModalFunction();
+    console.log(`key: ${key}`);
+    canvasMain.deleteShape(key);
+    showShapes();
   }
 
   function editShapeModalFunction(key) {
