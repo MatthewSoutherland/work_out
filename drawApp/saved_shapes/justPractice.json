@@ -1,0 +1,47 @@
+[
+    {
+        "type": "line",
+        "id": 0,
+        "x1": "0",
+        "y1": "0",
+        "x2": "2",
+        "y2": "2",
+        "color": "black",
+        "solidLine": true,
+        "lineWidth": "1"
+    },
+    {
+        "type": "rectangle",
+        "id": 1,
+        "x1": "0",
+        "y1": "0",
+        "width": "1",
+        "height": "1",
+        "color": "black",
+        "solidLine": true,
+        "lineWidth": "1"
+    },
+    {
+        "type": "arc",
+        "id": 2,
+        "x": "0",
+        "y": "0",
+        "radius": "1",
+        "startAngle": "0",
+        "endAngle": "90",
+        "direction": true,
+        "color": "black",
+        "solidLine": true,
+        "lineWidth": "1"
+    },
+    {
+        "type": "text",
+        "id": 3,
+        "text": "Text",
+        "x": "0",
+        "y": "0",
+        "fontSize": "12",
+        "color": "black",
+        "fontType": "Arial"
+    }
+]

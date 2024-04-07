@@ -7,7 +7,7 @@ function saveJson() {
     // Send shape data and file name to the server
     let payload = {
       fileName: fileName,
-      json: shapes,
+      json: canvasMain.getShapeData(),
     };
 
     fetch("/", {
@@ -24,7 +24,7 @@ function saveJson() {
       .catch(error => {
         console.error("Error:", error);
       });
-    saveJsonModal.style.display = "none";
+    document.getElementById("save-json-modal").style.display = "none";
   }
 
   function loadJson() {
@@ -37,9 +37,8 @@ function saveJson() {
       .then(response => response.json())
       .then(data => {
         console.log("Success:", data);
-        shapes = data;
-        loadJsonModal.style.display = "none";
-        updateShapesCounter();
+        canvasMain.loadShapeData(data)
+        document.getElementById("load-json-modal").style.display = "none";
       })
       .catch(error => {
         console.error("Error:", error);

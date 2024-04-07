@@ -1,0 +1,48 @@
+{
+  "type": "rectangle",
+  "id": 1,
+  "x1": "0",
+  "y1": "0",
+  "width": "1",
+  "height": "1",
+  "color": "black",
+  "solidLine": true,
+  "lineWidth": "1"
+}
+modals.js:119 key: 1 attr: type element.value: rectangle
+modals.js:119 key: 1 attr: id element.value: 1
+canvasDrawingClass.js:325  Shape not found for key: 1
+editShape @ canvasDrawingClass.js:325
+editShapeModalFunction @ modals.js:118
+onclick @ (index):1
+modals.js:119 key: 1 attr: x1 element.value: 0
+canvasDrawingClass.js:325  Shape not found for key: 1
+editShape @ canvasDrawingClass.js:325
+editShapeModalFunction @ modals.js:118
+onclick @ (index):1
+modals.js:119 key: 1 attr: y1 element.value: 0
+canvasDrawingClass.js:325  Shape not found for key: 1
+editShape @ canvasDrawingClass.js:325
+editShapeModalFunction @ modals.js:118
+onclick @ (index):1
+modals.js:119 key: 1 attr: width element.value: 1
+canvasDrawingClass.js:325  Shape not found for key: 1
+editShape @ canvasDrawingClass.js:325
+editShapeModalFunction @ modals.js:118
+onclick @ (index):1
+modals.js:119 key: 1 attr: height element.value: 1
+canvasDrawingClass.js:325  Shape not found for key: 1
+editShape @ canvasDrawingClass.js:325
+editShapeModalFunction @ modals.js:118
+onclick @ (index):1
+modals.js:119 key: 1 attr: color element.value: black
+canvasDrawingClass.js:325  Shape not found for key: 1
+editShape @ canvasDrawingClass.js:325
+editShapeModalFunction @ modals.js:118
+onclick @ (index):1
+modals.js:119 key: 1 attr: solidLine element.value: true
+canvasDrawingClass.js:325  Shape not found for key: 1
+editShape @ canvasDrawingClass.js:325
+editShapeModalFunction @ modals.js:118
+onclick @ (index):1
+modals.js:119 key: 1 attr: lineWidth element.value: 1

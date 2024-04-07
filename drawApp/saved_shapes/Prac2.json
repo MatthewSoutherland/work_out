@@ -1,0 +1,47 @@
+[
+    {
+        "color": "red",
+        "id": "0",
+        "lineWidth": "3",
+        "solidLine": "true",
+        "type": "line",
+        "x1": "0",
+        "x2": "2",
+        "y1": "0",
+        "y2": "0"
+    },
+    {
+        "color": "black",
+        "height": "1",
+        "id": 1,
+        "lineWidth": "1",
+        "solidLine": true,
+        "type": "rectangle",
+        "width": "1",
+        "x1": "0",
+        "y1": "0"
+    },
+    {
+        "color": "black",
+        "direction": true,
+        "endAngle": "90",
+        "id": 2,
+        "lineWidth": "1",
+        "radius": "1",
+        "solidLine": true,
+        "startAngle": "0",
+        "type": "arc",
+        "x": "0",
+        "y": "0"
+    },
+    {
+        "color": "black",
+        "fontSize": "12",
+        "fontType": "Arial",
+        "id": 3,
+        "text": "Text",
+        "type": "text",
+        "x": "0",
+        "y": "0"
+    }
+]

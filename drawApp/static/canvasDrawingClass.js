@@ -318,6 +318,11 @@ class DrawingCanvas {
   getShape(key) {
     return this.shapes.find(shape => shape.id.toString() === key.toString());
   }
+
+  loadShapeData(data) {
+    this.shapes = data;
+    this.shapesCounter = data.length;
+  } 
   
 
   editShape(key, attr, value) {
