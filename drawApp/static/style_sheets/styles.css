@@ -148,6 +148,14 @@
   margin-bottom: 1rem;
 }
 
+.sb {
+  margin-bottom: .5rem;
+}
+
+.st {
+  margin-top: .5rem;
+}
+
 pre {
   margin: 0;
   padding: 0;

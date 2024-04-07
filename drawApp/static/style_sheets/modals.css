@@ -63,8 +63,8 @@
     color: var(--modal-close-button-hover-color);
   }
   
-  #draw-line-modal-content {
-    width: 50%;
+  #draw-line-modal {
+    width: 22rem;
   }
 
 #add-text-modal-content {

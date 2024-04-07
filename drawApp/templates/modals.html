@@ -2,13 +2,69 @@
   <div id="draw-line-modal-header" class="modal-header">
     <span class="close" id="draw-line-span" onclick="closeModal('draw-line-modal')">&times;</span>
   </div>
-  <div id="draw-line-div" class="div-row modal-elements-div">
-    <h5>Draw Line</h5>
-    <input type="text" id="x1" value="1" placeholder="x1" />
-    <input type="text" id="y1" value="1" placeholder="y1" />
-    <input type="text" id="x2" value="2" placeholder="x2" />
-    <input type="text" id="y2" value="2" placeholder="y2" />
-    <button type="button" id="draw-line-modal-button" class="primary-button modal-button" onclick="drawLine()">Draw Line</button>
+  <div class="div-row modal-elements-div">
+    <fieldset>
+      <legend>X and Y values
+      </legend>
+      <div class="div-row">
+        <label for="x1">X1</label>
+        <input type="text" id="x1" value="1" placeholder="x1" />
+      </div>
+      <div class="div-row">
+        <label for="y1">Y1</label>
+        <input type="text" id="y1" value="1" placeholder="y1" />
+      </div>
+      <div class="div-row">
+        <label for="x2">X2</label>
+        <input type="text" id="x2" value="2" placeholder="x2" />
+      </div>
+      <div class="div-row">
+        <label for="y2">Y2</label>
+        <input type="text" id="y2" value="2" placeholder="y2" />
+      </div>
+      <button type="button" id="draw-line-modal-button" class="primary-button modal-button" onclick="drawLine()">Draw Line</button>
+    </fieldset>
+
+    <fieldset>
+      <legend>Specs</legend>
+
+      <div class="div-row sb">
+        <label for="ldraw-color">Draw Color:</label>
+        <select id="ldraw-color" name="color">
+          <option value="black">Black</option>
+          <option value="red">Red</option>
+          <option value="blue">Blue</option>
+          <option value="green">Green</option>
+          <option value="yellow">Yellow</option>
+        </select>
+      </div>
+
+      <div class="div-row sb">
+        <label for="lline-width">Line Width:</label>
+        <select id="lline-width" name="line-width">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
+      </div>
+      <fieldset>
+        <legend>Line Type</legend>
+        <div class="div-column">
+          <div class="div-row">
+            <label for="solid-line">Solid Line</label>
+            <input type="radio" id="lsolid-line" name="line" value="solid" checked />
+          </div>
+          
+          <div class="div-row">
+            <label for="dashed-line">Dashed Line</label>
+            <input type="radio" id="ldashed-line" name="line" value="dashed" />
+          </div>
+        </div>
+      </fieldset>
+
+    </fieldset>
   </div>
 </div>
 
