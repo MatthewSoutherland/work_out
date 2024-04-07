@@ -47,11 +47,6 @@ def load_json(file_name):
         return jsonify(data)
 
 
-@home_bp.route("/validation")
-def validation():
-    return render_template("validation.html")
-
-
 @home_bp.route("/draw")
 def draw():
     return render_template("drawClass.html")
