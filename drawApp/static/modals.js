@@ -57,83 +57,45 @@ function closeModal(elementId) {
     document.getElementById(elementId).style.display = "block";
     const viewer = document.getElementById("show-shapes-viewer");
     viewer.innerHTML = "";  
-
+  }
+  
+  function showShapes() {
+    const viewer = document.getElementById("show-shapes-viewer");
+    viewer.innerHTML = "";
     const shapeData = canvasMain.getShapeData();
     
     for (let i = 0; i < shapeData.length; i++) {
       let shape = shapeData[i];
-      if (shape.type === "line") {
-        console.log(`shape.type: ${shape.type}`);
-        console.log(`shape.x1: ${shape.x1}`);
-        console.log(`shape.id: ${shape.id}`);
-      }
-    }
-  }
-  
-  function showShapesModalFunction2() {
-    const elementId = "show-shapes-modal";
-    activeModal = "show-shapes";
-    dragElement(elementId);
-    document.getElementById(elementId).style.display = "block";
-    const viewer = document.getElementById("show-shapes-viewer");
-    viewer.innerHTML = "";
-
-    for (let key in shapes) {
-      let shape = shapes[key];
+      let filter = document.getElementById(`${shapeData[i].type}-filter`).checked;
+      if (!filter) continue;
       let divCol = createElement("div", {
         class: "div-column border",
       });
 
       for (let attr in shape) {
         let fontWeight = "normal";
-        if (attr === "type") {
-          fontWeight = "bold";
-        }
-        let div = createElement("div", {
-          class: "div-row",
-        });
-
-        let label = createElement(
-          "label",
-          {
-            class: "label",
-          },
-          `${attr}: `
-        );
-
+        if (attr === "type") fontWeight = "bold";
+        let div = createElement("div", {class: "div-row",});
+        let label = createElement("label", {class: "label",}, `${attr}: `);
         let input = createElement("input", {
           class: "show-shapes-input",
-          id: `${key}-${attr}`,
+          id: `${i}-${attr}`,
           style: `font-weight: ${fontWeight}`,
           value: shape[attr],
         });
-
         div.appendChild(label);
         div.appendChild(input);
         divCol.appendChild(div);
       }
-      let divRow = createElement("div", {
-        class: "div-row",
-      });
-
-      let editButton = createElement(
-        "button",
-        {
-          class: "insert-button modal-button",
-          onclick: `editShapeModalFunction("${key}")`,
-        },
-        "EDIT"
-      );
-
-      let deleteButton = createElement(
-        "button",
-        {
-          class: "delete-button insert-button modal-button",
-          onclick: `deleteShapeModalFunction("${key}")`,
-        },
-        "DELETE"
-      );
-
+      let divRow = createElement("div", {class: "div-row",});
+      let editButton = createElement("button", {
+        class: "insert-button modal-button",
+        onclick: `editShapeModalFunction(${i})`,
+      }, "EDIT");
+      let deleteButton = createElement("button", {
+        class: "delete-button insert-button modal-button",
+        onclick: `deleteShapeModalFunction(${i})`,
+      }, "DELETE");
       divRow.appendChild(editButton);
       divRow.appendChild(deleteButton);
       divCol.appendChild(divRow);

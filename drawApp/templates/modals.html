@@ -357,9 +357,37 @@
 
 <div id="show-shapes-modal" class="modal-content" style="display: none">
   <div id="show-shapes-modal-header" class="modal-header">
-    <span class="close" id="show-shapes-span" onclick="closeModal('ahow-shapes-modal')">&times;</span>
+    <span class="close" id="show-shapes-span" onclick="closeModal('show-shapes-modal')">&times;</span>
   </div>
-  <div id="show-shapes-viewer"></div>
+  <div id="show-shapes-filter">
+      <fieldset class="div-row">
+        <legend>Filter By Type</legend>
+        <div class="div-row">
+          <label for="line-filter">Line</label>
+          <input type="checkbox" id="line-filter" name="line-filter" value="line" checked />
+        </div>
+        <div class="div-row">
+          <label for="circle-filter">Circle</label>
+          <input type="checkbox" id="circle-filter" name="circle-filter" value="circle" checked />
+        </div>
+        <div class="div-row">
+          <label for="rectangle-filter">Rectangle</label>
+          <input type="checkbox" id="rectangle-filter" name="rectangle-filter" value="rectangle" checked />
+        </div>
+        <div class="div-row">
+          <label for="arc-filter">Arc</label>
+          <input type="checkbox" id="arc-filter" name="arc-filter" value="arc" checked />
+        </div>
+        <div class="div-row">
+          <label for="text-filter">Text</label>
+          <input type="checkbox" id="text-filter" name="text-filter" value="text" checked />
+        </div>
+        <button type="button" class="primary-button spacer-left" onclick="showShapes()">View Shapes</button>
+      </fieldset>
+  </div>
+  
+  <div id="show-shapes-viewer">
+  </div>
 </div>
 
 <div id="save-json-modal" class="modal-content" style="display: none">
