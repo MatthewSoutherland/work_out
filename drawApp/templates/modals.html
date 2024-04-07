@@ -1,6 +1,6 @@
 <div id="draw-line-modal-content" class="modal-content" style="display: none">
   <div id="draw-line-modal-header" class="modal-header">
-    <span class="close" id="draw-line-span">&times;</span>
+    <span class="close" id="draw-line-span" onclick="closeModal('draw-line-modal-content')">&times;</span>
   </div>
   <div id="draw-line-div" class="div-row modal-elements-div">
     <h5>Draw Line</h5>
@@ -14,7 +14,7 @@
 
 <div id="draw-circle-modal-content" class="modal-content" style="display: none">
   <div id="draw-circle-modal-header" class="modal-header">
-    <span class="close" id="draw-circle-span">&times;</span>
+    <span class="close" id="draw-circle-span" onclick="closeModal('draw-line-circle-content')">&times;</span>
   </div>
   <div id="draw-circle-div" class="div-row modal-elements-div">
     <h5>Draw Circle</h5>
@@ -27,7 +27,7 @@
 
 <div id="draw-rectangle-modal-content" class="modal-content" style="display: none">
   <div id="draw-rectangle-modal-header" class="modal-header">
-    <span class="close" id="draw-rectangle-span">&times;</span>
+    <span class="close" id="draw-rectangle-span" onclick="closeModal('draw-rectangle-modal-content')">&times;</span>
   </div>
   <div id="draw-rectangle-div" class="div-row modal-elements-div">
     <h5>Draw Rectangle</h5>
@@ -39,23 +39,9 @@
   </div>
 </div>
 
-<div id="fill-rectangle-modal-content" class="modal-content" style="display: none">
-  <div id="fill-rectangle-modal-header" class="modal-header">
-    <span class="close" id="fill-rectangle-span">&times;</span>
-  </div>
-  <div id="fill-rectangle-div" class="div-row modal-elements-div">
-    <h5>Fill Rectangle</h5>
-    <input type="text" id="fill-x" value="-1" placeholder="rx" />
-    <input type="text" id="fill-y" value="-1" placeholder="ry" />
-    <input type="text" id="fill-w" value="1" placeholder="width" />
-    <input type="text" id="fill-h" value="1" placeholder="height" />
-    <button type="button" id="fill-rectangle-modal-button" class="primary-button modal-button" onclick="fillRectangle()">Draw Rectangle</button>
-  </div>
-</div>
-
 <div id="draw-arc-modal-content" class="modal-content" style="display: none">
   <div id="draw-arc-modal-header" class="modal-header">
-    <span class="close" id="draw-arc-span">&times;</span>
+    <span class="close" id="draw-arc-span" onclick="closeModal('draw-arc-modal-content')">&times;</span>
   </div>
   <div id="draw-arc-div" class="div-row modal-elements-div">
     <h5>Draw Arc</h5>
@@ -75,7 +61,7 @@
 
 <div id="add-text-modal-content" class="modal-content" style="display: none">
   <div id="add-text-modal-header" class="modal-header">
-    <span class="close" id="add-text-span">&times;</span>
+    <span class="close" id="add-text-span" onclick="closeModal('add-text-modal-content')">&times;</span>
   </div>
   <div id="add-text-div" class="div-column modal-elements-div">
     <h5>Add Text</h5>
@@ -101,14 +87,14 @@
 
 <div id="show-shapes-modal-content" class="modal-content" style="display: none">
   <div id="show-shapes-modal-header" class="modal-header">
-    <span class="close" id="show-shapes-span">&times;</span>
+    <span class="close" id="show-shapes-span" onclick="closeModal('ahow-shapes-modal-content')">&times;</span>
   </div>
   <div id="show-shapes-viewer"></div>
 </div>
 
 <div id="save-json-modal-content" class="modal-content" style="display: none">
   <div id="save-json-modal-header" class="modal-header">
-    <span class="close" id="save-json-span">&times;</span>
+    <span class="close" id="save-json-span" onclick="closeModal('save-json-modal-content')">&times;</span>
   </div>
   <div id="save-json-div" class="div-row modal-elements-div">
     <h5>Save JSON</h5>
@@ -120,7 +106,7 @@
 
 <div id="load-json-modal-content" class="modal-content" style="display: none">
   <div id="load-json-modal-header" class="modal-header">
-    <span class="close" id="load-json-span">&times;</span>
+    <span class="close" id="load-json-span" onclick="closeModal('load-json-modal-content')">&times;</span>
   </div>
   <div id="load-json-div" class="div-row modal-elements-div">
     <label for="existing-files" class="floating-label">Existing Files</label>
