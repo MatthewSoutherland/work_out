@@ -33,6 +33,7 @@ class DrawingCanvas {
     this.left_right_shift = 0;
     this.up_down_shift = 0;
     this.shapes = [];
+    this.shapesCounter = 0;
   }
 
 
@@ -169,10 +170,23 @@ class DrawingCanvas {
     }
   }
 
-  drawLine(x1, x2, y1, y2) {
+  drawLine(x1, x2, y1, y2, color, solidLine, lineWidth) {
     const type = "line";
-    const shape = { type, x1, y1, x2, y2 };
-    this.shapes.push(shape);
+    let line = {}
+    line = {
+      "type": type,
+      "id": this.shapesCounter,
+      "x1": x1,
+      "y1": y1,
+      "x2": x2,
+      "y2": y2,
+      "color": color,
+      "solidLine": solidLine,
+      "lineWidth": lineWidth
+    }
+    this.shapes.push(line);
+    console.log(JSON.stringify(this.shapes, null, 2));
+    this.shapesCounter++;
   }
 
   drawRectangle(x1, y1, width, height) {

@@ -20,35 +20,23 @@
     
     let [color, solidLine, lineWidth] = getDrawingDetails('line');
 
-    console.table({
-    color: color,
-    solidLine: solidLine,
-    lineWidth: lineWidth,
-    });
+    canvasMain.drawLine(x1, y1, x2, y2, color, solidLine, lineWidth);
 
-    shapes[shapesCounter] = {
-      type: "line",
-      x1: x1,
-      y1: y1,
-      x2: x2,
-      y2: y2,
-      color: color,
-      solidLine: solidLine,
-      lineWidth: lineWidth,
-    };
+    //shapes[shapesCounter] = {
+    //  type: "line",
+    //  x1: x1,
+    //  y1: y1,
+    //  x2: x2,
+    //  y2: y2,
+    //  color: color,
+    //  solidLine: solidLine,
+    //  lineWidth: lineWidth,
+    //};
+    //let xStart = parseFloat(x1) * pixelsPerInch * scaleFactor;
+    //let yStart = parseFloat(y1) * pixelsPerInch * scaleFactor;
+    //let xEnd = parseFloat(y2) * pixelsPerInch * scaleFactor;
+    //let yEnd = parseFloat(y2) * pixelsPerInch * scaleFactor;
 
-    let xStart = parseFloat(x1) * pixelsPerInch * scaleFactor;
-    let yStart = parseFloat(y1) * pixelsPerInch * scaleFactor;
-    let xEnd = parseFloat(y2) * pixelsPerInch * scaleFactor;
-    let yEnd = parseFloat(y2) * pixelsPerInch * scaleFactor;
-
-    ctx.beginPath();
-    ctx.moveTo(xStart, yStart);
-    ctx.lineTo(xEnd, yEnd);
-    ctx.stroke();
-    ctx.closePath();
-
-    shapesCounter++;
     drawLineModal.style.display = "none";
   }
 
