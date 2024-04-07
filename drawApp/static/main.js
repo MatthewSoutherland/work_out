@@ -32,23 +32,6 @@ const numberRegex = /^[+-]?([0-9]*[.])?[0-9]+$/;
 // valTest
 currentUnitVisability = "drilling";
 
-// modals
-var drawLineModal;
-var drawLineSpan;
-var drawCircleModal;
-var drawCircleSpan;
-var drawRectModal;
-var drawRectSpan;
-var drawArcModal;
-var drawArcSpan;
-var showShapesModal;
-var showShapesSpan;
-var saveJsonModal;
-var saveJsonSpan;
-var loadJsonModal;
-var loadJsonSpan;
-var addTextModal;
-var addTextSpan;
 var activeModal;
 
 document.addEventListener("DOMContentLoaded", event => {
@@ -117,13 +100,4 @@ document.addEventListener("DOMContentLoaded", event => {
     currentVertex = null;
   });
 
-  drawLineModal = document.getElementById("draw-line-modal-content");
-  drawCircleModal = document.getElementById("draw-circle-modal-content");
-  drawRectModal = document.getElementById("draw-rectangle-modal-content");
-  drawArcModal = document.getElementById("draw-arc-modal-content");
-  showShapesModal = document.getElementById("show-shapes-modal-content");
-  saveJsonModal = document.getElementById("save-json-modal-content");
-  loadJsonModal = document.getElementById("load-json-modal-content");
-  addTextModal = document.getElementById("add-text-modal-content");
-   
 });

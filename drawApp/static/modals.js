@@ -3,58 +3,61 @@ function closeModal(elementId) {
     document.getElementById(elementId).style.display = "none";
 }
   function drawLineModalFunction() {
+    const elementId = "draw-line-modal";
     activeModal = "draw-line";
-    dragElement();
-    drawLineModal.style.display = "block";
+    dragElement(elementId);
+    document.getElementById(elementId).style.display = "block";
   }
 
   function drawCircleModalFunction() {
+    const elementId = "draw-circle-modal";
     activeModal = "draw-circle";
-    dragElement(document.getElementById(`${activeModal}-modal-content`));
-    drawCircleModal.style.display = "block";
+    dragElement(elementId);
+    document.getElementById(elementId).style.display = "block";
   }
 
   function drawRectangleModalFunction() {
+    const elementId = "draw-rectangle-modal";
     activeModal = "draw-rectangle";
-    dragElement(document.getElementById(`${activeModal}-modal-content`));
+    dragElement(elementId);
     drawRectModal.style.display = "block";
-  }
-
-  function fillRectangleModalFunction() {
-    activeModal = "fill-rectangle";
-    dragElement(document.getElementById(`${activeModal}-modal-content`));
-    fillRectModal.style.display = "block";
+    document.getElementById(elementId).style.display = "block";
   }
 
   function drawArcModalFunction() {
+    const elementId = "draw-arc-modal";
     activeModal = "draw-arc";
-    dragElement(document.getElementById(`${activeModal}-modal-content`));
-    drawArcModal.style.display = "block";
+    dragElement(elementId);
+    document.getElementById(elementId).style.display = "block";
   }
 
   function addTextModalFunction() {
+    const elementId = "add-text-modal";
     activeModal = "add-text";
-    dragElement(document.getElementById(`${activeModal}-modal-content`));
-    addTextModal.style.display = "block";
+    dragElement(elementId);
+    document.getElementById(elementId).style.display = "block";
   }
 
   function saveJsonModalFunction() {
+    const elementId = "save-json-modal";
     activeModal = "save-json";
-    dragElement(document.getElementById(`${activeModal}-modal-content`));
-    saveJsonModal.style.display = "block";
+    dragElement(elementId);
+    document.getElementById(elementId).style.display = "block";
   }
 
   function loadJsonModalFunction() {
+    const elementId = "load-json-modal";
     activeModal = "load-json";
-    dragElement(document.getElementById(`${activeModal}-modal-content`));
-    loadJsonModal.style.display = "block";
+    dragElement(elementId);
+    document.getElementById(elementId).style.display = "block";
   }
 
   
   function showShapesModalFunction() {
+    const elementId = "show-shapes-modal";
     activeModal = "show-shapes";
-    dragElement(document.getElementById(`${activeModal}-modal-content`));
-    showShapesModal.style.display = "block";
+    dragElement(elementId);
+    document.getElementById(elementId).style.display = "block";
     const viewer = document.getElementById("show-shapes-viewer");
     viewer.innerHTML = "";
 
@@ -122,8 +125,9 @@ function closeModal(elementId) {
   }
 
   function deleteShapeModalFunction(key) {
+    const elementId = "delete-shape-modal";
     delete shapes[key];
-    showShapesModal.style.display = "none";
+    document.getElementById("show-shapes-modal").style.display = "none";
     showShapesModalFunction();
   }
 
@@ -134,5 +138,5 @@ function closeModal(elementId) {
       let element = document.getElementById(`${key}-${attr}`);
       shape[attr] = element.value;
     }
-    showShapesModal.style.display = "none";
+    document.getElementById("show-shapes-modal").style.display = "none";
   }

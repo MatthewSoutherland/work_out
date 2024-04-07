@@ -4,9 +4,9 @@ function dragElement(elementId) {
       pos2 = 0,
       pos3 = 0,
       pos4 = 0;
-    if (document.getElementById(`${elementId}-modal-header`)) {
+    if (document.getElementById(`${elementId}-header`)) {
       // if present, the header is where you move the DIV from:
-      document.getElementById(`${elementId}-modal-header`).onmousedown = dragMouseDown;
+      document.getElementById(`${elementId}-header`).onmousedown = dragMouseDown;
     } else {
       // otherwise, move the DIV from anywhere inside the DIV:
       const elmnt = document.getElementById(elementId);
