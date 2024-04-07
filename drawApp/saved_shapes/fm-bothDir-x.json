@@ -1,16 +1,18 @@
-{
-    "0": {
+[
+    {
         "color": "blue",
+        "id": 0,
         "lineWidth": "2",
-        "rh": "5",
-        "rw": "5",
-        "rx": "-2.5",
-        "ry": "-2.5",
-        "solidLine": "true",
-        "type": "rect"
+        "height": "5",
+        "width": "5",
+        "x1": "-2.5",
+        "y1": "-2.5",
+        "solidLine": true,
+        "type": "rectangle"
     },
-    "1": {
+    {
         "color": "black",
+        "id": "1",
         "lineWidth": "2",
         "solidLine": "true",
         "type": "line",
@@ -19,8 +21,9 @@
         "y1": "1.5",
         "y2": "1.5"
     },
-    "2": {
+    {
         "color": "black",
+        "id": "2",
         "lineWidth": "2",
         "solidLine": "true",
         "type": "line",
@@ -29,8 +32,9 @@
         "y1": "-1.5",
         "y2": "-1.5"
     },
-    "3": {
+    {
         "color": "black",
+        "id": "3",
         "lineWidth": "2",
         "solidLine": "true",
         "type": "line",
@@ -39,57 +43,60 @@
         "y1": "0",
         "y2": "0"
     },
-    "4": {
+    {
         "color": "black",
-        "cr": "1.",
-        "cx": "-4",
-        "cy": "1.5",
+        "id": "4",
+        "radius": "1.",
+        "x": "-4",
+        "y": "1.5",
         "lineWidth": "2",
         "solidLine": "true",
         "type": "circle"
     },
-    "5": {
-        "color": "darkblue",
-        "fontSize": "46",
-        "lineWidth": "1",
-        "solidLine": "true",
+    {
+        "type": "text",
+        "id": "5",
         "text": "1",
-        "type": "text",
         "x": "-4.3",
-        "y": "-1.7"
-    },
-    "6": {
-        "color": "darkblue",
+        "y": "-1.7",
         "fontSize": "46",
-        "lineWidth": "1",
-        "solidLine": "true",
+        "color": "darkblue",
+        "fontType": "Arial"
+    },
+    {
+        "type": "text",
+        "id": "6",
         "text": "2",
-        "type": "text",
         "x": "4.2",
-        "y": "-.2"
-    },
-    "7": {
-        "color": "darkblue",
+        "y": "-.2",
         "fontSize": "46",
-        "lineWidth": "1",
-        "solidLine": "true",
-        "text": "3",
-        "type": "text",
-        "x": "-4.3",
-        "y": "1.3"
+        "color": "darkblue",
+        "fontType": "Arial"
     },
-    "10": {
+    {
+        "type": "text",
+        "id": "7",
+        "text": "3",
+        "x": "-4.3",
+        "y": "1.3",
+        "fontSize": "46",
+        "color": "darkblue",
+        "fontType": "Arial"
+    },
+    {
+        "type": "rectangle",
+        "id": "8",
+        "x1": "-5.5",
+        "y1": "-3.5",
+        "width": "11",
+        "height": "7",
         "color": "black",
         "lineWidth": "1",
-        "rh": "7",
-        "rw": "11",
-        "rx": "-5.5",
-        "ry": "-3.5",
-        "solidLine": "true",
-        "type": "rect"
+        "solidLine": "true"
     },
-    "11": {
+    {
         "type": "line",
+        "id": "9",
         "x1": "4",
         "y1": "1.5",
         "x2": "4",
@@ -98,8 +105,9 @@
         "solidLine": false,
         "lineWidth": "2"
     },
-    "12": {
+    {
         "type": "line",
+        "id": "10",
         "x1": "-4",
         "y1": "0",
         "x2": "-4",
@@ -108,4 +116,4 @@
         "solidLine": false,
         "lineWidth": "2"
     }
-}
+]

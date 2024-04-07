@@ -294,8 +294,8 @@ class DrawingCanvas {
   }
 
   setLineDash(isSolid) {
-    if (isSolid == "false") {
-      this.ctx.setLineDash([5, 5]);
+    if (isSolid == "false" || isSolid == false) {
+      this.ctx.setLineDash([8, 8]);
       console.log("dashed line called")
     } else {
       console.log("solid line called")
