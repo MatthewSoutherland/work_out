@@ -118,44 +118,12 @@ document.addEventListener("DOMContentLoaded", event => {
   });
 
   drawLineModal = document.getElementById("draw-line-modal-content");
-  drawLineSpan = document.getElementById("draw-line-span");
   drawCircleModal = document.getElementById("draw-circle-modal-content");
-  drawCircleSpan = document.getElementById("draw-circle-span");
   drawRectModal = document.getElementById("draw-rectangle-modal-content");
-  drawRectSpan = document.getElementById("draw-rectangle-span");
   drawArcModal = document.getElementById("draw-arc-modal-content");
-  drawArcSpan = document.getElementById("draw-arc-span");
   showShapesModal = document.getElementById("show-shapes-modal-content");
-  showShapesSpan = document.getElementById("show-shapes-span");
   saveJsonModal = document.getElementById("save-json-modal-content");
-  saveJsonSpan = document.getElementById("save-json-span");
   loadJsonModal = document.getElementById("load-json-modal-content");
-  loadJsonSpan = document.getElementById("load-json-span");
   addTextModal = document.getElementById("add-text-modal-content");
-  addTextSpan = document.getElementById("add-text-span");
-   // When the user clicks on <span> (x), close the modal
-   drawLineSpan.onclick = function () {
-    drawLineModal.style.display = "none";
-  };
-  drawCircleSpan.onclick = function () {
-    drawCircleModal.style.display = "none";
-  };
-  drawRectSpan.onclick = function () {
-    drawRectModal.style.display = "none";
-  };
-  drawArcSpan.onclick = function () {
-    drawArcModal.style.display = "none";
-  };
-  showShapesSpan.onclick = function () {
-    showShapesModal.style.display = "none";
-  };
-  addTextSpan.onclick = function () {
-    addTextModal.style.display = "none";
-  };
-  saveJsonSpan.onclick = function () {
-    saveJsonModal.style.display = "none";
-  };
-  loadJsonSpan.onclick = function () {
-    loadJsonModal.style.display = "none";
-  };
+   
 });
