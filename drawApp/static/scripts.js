@@ -14,3 +14,8 @@ function calcSecondLineVertice() {
     line_y2.value = new_y2.toFixed(4);
 
 }
+
+function setCanvasGlobalScale() {
+    const scale = getElementValue("canvas-scale-factor");
+    canvasMain.setGlobalCanvasScale(scale)
+}

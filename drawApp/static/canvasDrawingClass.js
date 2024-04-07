@@ -303,6 +303,11 @@ class DrawingCanvas {
     }
   }
 
+  setGlobalCanvasScale(scale) {
+    this.globalCanvasScale = scale;
+    this.drawCanvas()
+  }
+
   deleteShape(id) {
     this.shapes = this.shapes.filter(shape => shape.id.toString() !== id.toString());
   }
