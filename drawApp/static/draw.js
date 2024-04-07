@@ -21,14 +21,13 @@
   }
 
   function drawLine() {
-    closeAllModals();
     const x1 = getElementValue("x1");
     const y1 = getElementValue("y1");
     const x2 = getElementValue("x2");
     const y2 = getElementValue("y2");
-    // get color
-
-    [color, solidLine, lineWidth] = getDrawingDetails();
+    const color = getElementValue("line-draw-color");
+    const solidLine = document.getElementById("line-solid-line").checked;
+    const lineWidth = getElementValue("line-line-width");
 
     shapes[shapesCounter] = {
       type: "line",
