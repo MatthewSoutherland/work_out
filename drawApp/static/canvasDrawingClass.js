@@ -128,7 +128,6 @@ class DrawingCanvas {
   }
 
   drawShapes() {
-    console.log(this.shapes.length)
     for (let i = 0; i < this.shapes.length; i++) {
       let shape = this.shapes[i];
       
@@ -304,6 +303,10 @@ class DrawingCanvas {
 
   logShapeData() {
     console.log(JSON.stringify(this.shapes, null, 2));
+  }
+
+  getShapeData() {
+    return this.shapes;
   }
 
   // settings: lineWidth, color, solidLine, etc.

@@ -51,8 +51,26 @@ function closeModal(elementId) {
     document.getElementById(elementId).style.display = "block";
   }
 
-  
   function showShapesModalFunction() {
+    const elementId = "show-shapes-modal";
+    dragElement(elementId);
+    document.getElementById(elementId).style.display = "block";
+    const viewer = document.getElementById("show-shapes-viewer");
+    viewer.innerHTML = "";  
+
+    const shapeData = canvasMain.getShapeData();
+    
+    for (let i = 0; i < shapeData.length; i++) {
+      let shape = shapeData[i];
+      if (shape.type === "line") {
+        console.log(`shape.type: ${shape.type}`);
+        console.log(`shape.x1: ${shape.x1}`);
+        console.log(`shape.id: ${shape.id}`);
+      }
+    }
+  }
+  
+  function showShapesModalFunction2() {
     const elementId = "show-shapes-modal";
     activeModal = "show-shapes";
     dragElement(elementId);
