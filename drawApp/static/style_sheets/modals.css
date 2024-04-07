@@ -67,6 +67,10 @@
     width: 32rem;
   }
 
+#draw-circle-modal {
+  width: 26rem;
+}
+
 #add-text-modal-content {
     width: 15rem;
 }

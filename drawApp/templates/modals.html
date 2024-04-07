@@ -85,12 +85,65 @@
   <div id="draw-circle-modal-header" class="modal-header">
     <span class="close" id="draw-circle-span" onclick="closeModal('draw-circle-modal')">&times;</span>
   </div>
-  <div id="draw-circle-div" class="div-row modal-elements-div">
-    <h5>Draw Circle</h5>
-    <input type="text" id="cx" value="0" placeholder="x center" />
-    <input type="text" id="cy" value="0" placeholder="y center" />
-    <input type="text" id="cr" value=".5" placeholder="radius" />
-    <button type="button" id="draw-circle-modal-button" class="primary-button modal-button" onclick="drawCircle()">Draw Circle</button>
+  <div class="div-row modal-elements-div">
+
+      <fieldset>
+        <legend>Circle Dimensions</legend>
+        <div class="div-row">
+          <label for="circle-xCenter">X Center</label>
+          <input type="text" id="circle-xCenter" value="0" placeholder="x center" />
+        </div>
+        <div class="div-row">
+          <label for="circle-yCenter">Y Center</label>
+          <input type="text" id="circle-yCenter" value="0" placeholder="y center" />
+        </div>
+        <div class="div-row">
+          <label for="circle-radius">Radius</label>
+          <input type="text" id="circle-radius" value="1" placeholder="radius" />
+        </div>
+        <button type="button" id="draw-circle-modal-button" class="primary-button modal-button" onclick="drawCircle()">Draw Circle</button>
+      </fieldset>
+
+      <fieldset>
+        <legend>Specs</legend>
+  
+        <div class="div-row sb">
+          <label for="draw-color">Draw Color:</label>
+          <select id="draw-color" name="color">
+            <option value="black">Black</option>
+            <option value="red">Red</option>
+            <option value="blue">Blue</option>
+            <option value="green">Green</option>
+            <option value="yellow">Yellow</option>
+          </select>
+        </div>
+  
+        <div class="div-row sb">
+          <label for="line-width">Line Width:</label>
+          <select id="line-width" name="line-width">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+          </select>
+        </div>
+        <fieldset>
+          <legend>Line Type</legend>
+          <div class="div-column">
+            <div class="div-row">
+              <label for="solid-line">Solid Line</label>
+              <input type="radio" id="solid-line" name="line" value="solid" checked />
+            </div>
+            
+            <div class="div-row">
+              <label for="dashed-line">Dashed Line</label>
+              <input type="radio" id="dashed-line" name="line" value="dashed" />
+            </div>
+          </div>
+        </fieldset>
+      </fieldset>
+
   </div>
 </div>
 
