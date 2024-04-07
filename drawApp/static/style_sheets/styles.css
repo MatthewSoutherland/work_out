@@ -161,6 +161,9 @@ pre {
   padding: 0;
 }
 
+.text-input {
+  width: 10rem !important;
+}
 #canvas-scale-factor-div {
   position: absolute;
   top: 2.5rem;

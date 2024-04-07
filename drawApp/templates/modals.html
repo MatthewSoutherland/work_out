@@ -152,12 +152,67 @@
     <span class="close" id="draw-rectangle-span" onclick="closeModal('draw-rectangle-modal')">&times;</span>
   </div>
   <div id="draw-rectangle-div" class="div-row modal-elements-div">
-    <h5>Draw Rectangle</h5>
-    <input type="text" id="rx" value="-1" placeholder="rx" />
-    <input type="text" id="ry" value="-1" placeholder="ry" />
-    <input type="text" id="rw" value="1" placeholder="width" />
-    <input type="text" id="rh" value="1" placeholder="height" />
-    <button type="button" id="draw-rectangle-modal-button" class="primary-button modal-button" onclick="drawRectangle()">Draw Rectangle</button>
+    <fieldset>
+      <legend>Rectangle Dimensions</legend>
+      <div class="div-row">
+        <label for="rect-x">X 1</label>
+        <input type="text" id="rect-x" value="0" placeholder="x" tabindex="-1"/>
+      </div>
+      <div class="div-row">
+        <label for="rect-y">Y 1</label>
+        <input type="text" id="rect-y" value="0" placeholder="y" />
+      </div>
+      <div class="div-row">
+        <label for="rect-width">Width</label>
+        <input type="text" id="rect-width" value="1" placeholder="width" />
+      </div>
+      <div class="div-row">
+        <label for="rect-height">Height</label>
+        <input type="text" id="rect-height" value="1" placeholder="height" />
+      </div>
+      <button type="button" id="draw-rectangle-modal-button" class="primary-button modal-button" onclick="drawRectangle()">Draw Rectangle</button>
+    </fieldset>
+
+
+    <fieldset>
+      <legend>Specs</legend>
+
+      <div class="div-row sb">
+        <label for="draw-color">Draw Color:</label>
+        <select id="draw-color" name="color">
+          <option value="black">Black</option>
+          <option value="red">Red</option>
+          <option value="blue">Blue</option>
+          <option value="green">Green</option>
+          <option value="yellow">Yellow</option>
+        </select>
+      </div>
+
+      <div class="div-row sb">
+        <label for="line-width">Line Width:</label>
+        <select id="line-width" name="line-width">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
+      </div>
+      <fieldset>
+        <legend>Line Type</legend>
+        <div class="div-column">
+          <div class="div-row">
+            <label for="solid-line">Solid Line</label>
+            <input type="radio" id="solid-line" name="line" value="solid" checked />
+          </div>
+          
+          <div class="div-row">
+            <label for="dashed-line">Dashed Line</label>
+            <input type="radio" id="dashed-line" name="line" value="dashed" />
+          </div>
+        </div>
+      </fieldset>
+    </fieldset>
   </div>
 </div>
 
@@ -166,18 +221,80 @@
     <span class="close" id="draw-arc-span" onclick="closeModal('draw-arc-modal')">&times;</span>
   </div>
   <div id="draw-arc-div" class="div-row modal-elements-div">
-    <h5>Draw Arc</h5>
-    <input type="text" id="ax" value=".5" placeholder="x center line" />
-    <input type="text" id="ay" value=".5" placeholder="y center line" />
-    <input type="text" id="ar" value=".5" placeholder="radius" />
-    <input type="text" id="as" value="270" placeholder="start angle" />
-    <input type="text" id="ae" value="0" placeholder="end angle" />
-    <!-- radio button for cw ccw -->
-    <input type="radio" id="cw" name="direction" value="cw" checked />
-    <label for="cw">CW</label>
-    <input type="radio" id="ccw" name="direction" value="ccw" />
-    <label for="ccw">CCW</label>
-    <button type="button" id="draw-arc-modal-button" class="primary-button modal-button" onclick="drawArc()">Draw Arc</button>
+    <fieldset>
+      <legend>Arc Dimensions</legend>
+      <div class="div-row">
+        <label for="arc-xCenter">X Center</label>
+        <input type="text" id="arc-xCenter" value="0" placeholder="x center" />
+      </div>
+      <div class="div-row">
+        <label for="arc-yCenter">Y Center</label>
+        <input type="text" id="arc-yCenter" value="0" placeholder="y center" />
+      </div>
+      <div class="div-row">
+        <label for="arc-radius">Radius</label>
+        <input type="text" id="arc-radius" value="1" placeholder="radius" />
+      </div>
+      <div class="div-row">
+        <label for="arc-startAngle">Start Angle</label>
+        <input type="text" id="arc-startAngle" value="0" placeholder="start angle" />
+      </div>
+      <div class="div-row">
+        <label for="arc-endAngle">End Angle</label>
+        <input type="text" id="arc-endAngle" value="90" placeholder="end angle" />
+      </div>
+      <fieldset>
+        <legend>Direction</legend>
+        <div class="div-row">
+          <label for="arc-cw">CW</label>
+          <input type="radio" id="arc-cw" name="direction" value="cw" checked />
+        </div>
+        <div class="div-row">
+          <label for="arc-ccw">CCW</label>
+          <input type="radio" id="arc-ccw" name="direction" value="ccw" />
+        </div>
+      </fieldset>
+      <button type="button" id="draw-arc-modal-button" class="primary-button modal-button" onclick="drawArc()">Draw Arc</button>
+    </fieldset>
+    <fieldset>
+      <legend>Specs</legend>
+
+      <div class="div-row sb">
+        <label for="draw-color">Draw Color:</label>
+        <select id="draw-color" name="color">
+          <option value="black">Black</option>
+          <option value="red">Red</option>
+          <option value="blue">Blue</option>
+          <option value="green">Green</option>
+          <option value="yellow">Yellow</option>
+        </select>
+      </div>
+
+      <div class="div-row sb">
+        <label for="line-width">Line Width:</label>
+        <select id="line-width" name="line-width">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
+      </div>
+      <fieldset>
+        <legend>Line Type</legend>
+        <div class="div-column">
+          <div class="div-row">
+            <label for="solid-line">Solid Line</label>
+            <input type="radio" id="solid-line" name="line" value="solid" checked />
+          </div>
+          
+          <div class="div-row">
+            <label for="dashed-line">Dashed Line</label>
+            <input type="radio" id="dashed-line" name="line" value="dashed" />
+          </div>
+        </div>
+      </fieldset>
+    </fieldset>
   </div>
 </div>
 
@@ -185,25 +302,56 @@
   <div id="add-text-modal-header" class="modal-header">
     <span class="close" id="add-text-span" onclick="closeModal('add-text-modal')">&times;</span>
   </div>
-  <div id="add-text-div" class="div-column modal-elements-div">
-    <h5>Add Text</h5>
-    <label for="text"
-      >Text:
-      <input type="text" id="text" value="Text" placeholder="text" />
-    </label>
-    <label for="tx"
-      >X:
-      <input type="text" id="tx" value="0" placeholder="x" />
-    </label>
-    <label for="ty"
-      >Y:
-      <input type="text" id="ty" value="0" placeholder="y" />
-    </label>
-    <label for="tsize"
-      >Size:
-      <input type="text" id="tsize" value="12" placeholder="size" />
-    </label>
-    <button type="button" id="add-text-modal-button" class="primary-button modal-button" onclick="addText()">Add Text</button>
+  <div id="add-text-div" class="div-row modal-elements-div">
+    <fieldset>
+      <legend>Add Text</legend>
+      <div class="div-row">
+        <label for="text">Text</label>
+        <input type="text" class="text-input" value="Text" placeholder="text" autofocus/>
+      </div>
+      <div class="div-row">
+        <label for="text-x">Text X</label>
+        <input type="text" id="text-x" value="0" placeholder="x" />
+      </div>
+      <div class="div-row">
+        <label for="text-y">Text Y</label>
+        <input type="text" id="text-y" value="0" placeholder="y" />
+      </div>
+      <div class="div-row">
+        <label for="text-size">Size</label>
+        <input type="text" id="text-size" value="12" placeholder="size" />
+      </div>
+
+      <button type="button" id="add-text-modal-button" class="primary-button modal-button" onclick="addText()">Add Text</button>
+    </fieldset>
+    
+    <fieldset>
+      <legend>Font</legend>
+      
+      <div class="div-row sb">
+        <label for="draw-color">Font Color:</label>
+        <select id="draw-color" name="color">
+          <option value="black">Black</option>
+          <option value="red">Red</option>
+          <option value="blue">Blue</option>
+          <option value="green">Green</option>
+          <option value="yellow">Yellow</option>
+        </select>
+      </div>
+      
+      <div class="div-row">
+        <label for="font">Font</label>
+        <select id="font" name="font">
+          <option value="Arial">Arial</option>
+          <option value="Times New Roman">Times New Roman</option>
+          <option value="Courier New">Courier New</option>
+          <option value="Georgia">Georgia</option>
+          <option value="Verdana">Verdana</option>
+          <!-- more options -->
+        </select>
+      </div>
+    </fieldset>
+    
   </div>
 </div>
 

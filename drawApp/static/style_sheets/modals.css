@@ -71,8 +71,12 @@
   width: 26rem;
 }
 
-#add-text-modal-content {
-    width: 15rem;
+#draw-rectangle-modal {
+  width: 26rem;
+}
+
+#add-text-modal {
+    width: 30rem;
 }
 
 #show-shapes-viewer {
