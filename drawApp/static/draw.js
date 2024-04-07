@@ -1,17 +1,8 @@
 
-  function getDrawingDetails() {
-    const color = getElementValue("draw-color");
-    const solidLine = document.getElementById("solid-line").checked;
-    const lineWidth = getElementValue("line-width");
-
-    if (solidLine) {
-      ctx.setLineDash([]);
-    } else {
-      ctx.setLineDash([5, 15]);
-    }
-    ctx.strokeStyle = color;
-    ctx.fillStyle = color;
-    ctx.lineWidth = lineWidth;
+  function getDrawingDetails(type) {
+    const color = getElementValue(`${type}-draw-color`);
+    const solidLine = document.getElementById(`${type}-solid-line`).checked;
+    const lineWidth = getElementValue(`${type}-line-width`);
 
     return [color, solidLine, lineWidth];
   }
@@ -21,13 +12,19 @@
   }
 
   function drawLine() {
+    const drawLineModal = document.getElementById("draw-line-modal");
     const x1 = getElementValue("x1");
     const y1 = getElementValue("y1");
     const x2 = getElementValue("x2");
     const y2 = getElementValue("y2");
-    const color = getElementValue("line-draw-color");
-    const solidLine = document.getElementById("line-solid-line").checked;
-    const lineWidth = getElementValue("line-line-width");
+    
+    let [color, solidLine, lineWidth] = getDrawingDetails('line');
+
+    console.table({
+    color: color,
+    solidLine: solidLine,
+    lineWidth: lineWidth,
+    });
 
     shapes[shapesCounter] = {
       type: "line",
@@ -52,17 +49,27 @@
     ctx.closePath();
 
     shapesCounter++;
+    drawLineModal.style.display = "none";
   }
 
   function drawRectangle() {
-    closeAllModals();
+    const drawRectModal = document.getElementById("draw-rectangle-modal");
+    let rx = getElementValue("rect-x");
+    let ry = getElementValue("rect-y");
+    let rw = getElementValue("rect-width");
+    let rh = getElementValue("rect-height");
 
-    let rx = getElementValue("rx");
-    let ry = getElementValue("ry");
-    let rw = getElementValue("rw");
-    let rh = getElementValue("rh");
 
-    [color, solidLine, lineWidth] = getDrawingDetails();
+    [color, solidLine, lineWidth] = getDrawingDetails('rectangle');
+    console.table({
+    rx: rx,
+    ry: ry,
+    rw: rw,
+    rh: rh,
+    color: color,
+    solidLine: solidLine,
+    lineWidth: lineWidth,
+    });
 
     shapes[shapesCounter] = {
       type: "rect",
@@ -85,6 +92,7 @@
     ctx.stroke();
     ctx.closePath();
     shapesCounter++;
+    drawRectModal.style.display = "none";
   }
 
   function fillRectangle() {
