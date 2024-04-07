@@ -211,7 +211,6 @@ class DrawingCanvas {
       "lineWidth": lineWidth
     }
     this.shapes.push(line);
-    console.log(JSON.stringify(this.shapes, null, 2));
     this.shapesCounter++;
   }
 
@@ -230,7 +229,6 @@ class DrawingCanvas {
       "lineWidth": lineWidth
     }
     this.shapes.push(rectangle);
-    console.log(JSON.stringify(this.shapes, null, 2));
     this.shapesCounter++;
   }
 
@@ -248,7 +246,6 @@ class DrawingCanvas {
       "lineWidth": lineWidth
     }
     this.shapes.push(circle);
-    console.log(JSON.stringify(this.shapes, null, 2));
     this.shapesCounter++;
   }
 
@@ -269,7 +266,6 @@ class DrawingCanvas {
       "lineWidth": lineWidth
     }
     this.shapes.push(arc);
-    console.log(JSON.stringify(this.shapes, null, 2));
     this.shapesCounter++;
   }
 
@@ -287,7 +283,6 @@ class DrawingCanvas {
       "fontType": fontType
     }
     this.shapes.push(textObj);
-    console.log(JSON.stringify(this.shapes, null, 2));
     this.shapesCounter++;
   }
 
@@ -305,6 +300,10 @@ class DrawingCanvas {
     } else {
       this.ctx.setLineDash([]);
     }
+  }
+
+  logShapeData() {
+    console.log(JSON.stringify(this.shapes, null, 2));
   }
 
   // settings: lineWidth, color, solidLine, etc.

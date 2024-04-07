@@ -87,3 +87,7 @@
   function reDrawCanvas() {
     canvasMain.drawCanvas();
   }
+
+  function logShapes() {
+    canvasMain.logShapeData();
+  }
