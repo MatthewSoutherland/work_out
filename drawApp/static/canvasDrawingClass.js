@@ -86,7 +86,6 @@ class DrawingCanvas {
         let xCenter = parseFloat(shape.x);
         let yCenter = parseFloat(shape.y);
         let radius = parseFloat(shape.radius);
-
         coordsArray.push({ x: xCenter + radius, y: yCenter });
         coordsArray.push({ x: xCenter - radius, y: yCenter });
         coordsArray.push({ x: xCenter, y: yCenter + radius });
@@ -95,11 +94,14 @@ class DrawingCanvas {
         let xCenter = parseFloat(shape.x);
         let yCenter = parseFloat(shape.y);
         let radius = parseFloat(shape.radius);
-
         coordsArray.push({ x: xCenter + radius, y: yCenter });
         coordsArray.push({ x: xCenter - radius, y: yCenter });
         coordsArray.push({ x: xCenter, y: yCenter + radius });
         coordsArray.push({ x: xCenter, y: yCenter - radius });
+      } else if (shape.type === "text") {
+        let x = parseFloat(shape.x);
+        let y = parseFloat(shape.y);
+        coordsArray.push({ x: x, y: y });
       }
     }
     return coordsArray;
@@ -134,6 +136,9 @@ class DrawingCanvas {
         const y1 = this.scaleDimension(shape.y1);
         const x2 = this.scaleDimension(shape.x2);
         const y2 = this.scaleDimension(shape.y2);
+        this.ctx.strokeStyle = shape.color;
+        this.ctx.lineWidth = shape.lineWidth;
+        this.setLineDash(shape.solidLine);
         this.ctx.beginPath();
         this.ctx.moveTo(x1, y1);
         this.ctx.lineTo(x2, y2);
@@ -189,22 +194,80 @@ class DrawingCanvas {
     this.shapesCounter++;
   }
 
-  drawRectangle(x1, y1, width, height) {
+  drawRectangle(x1, y1, width, height, color, solidLine, lineWidth) {
     const type = "rectangle";
-    const shape = { type, x1, y1, width, height };
-    this.shapes.push(shape);
+    let rectangle = {};
+    rectangle = {
+      "type": type,
+      "id": this.shapesCounter,
+      "x1": x1,
+      "y1": y1,
+      "width": width,
+      "height": height,
+      "color": color,
+      "solidLine": solidLine,
+      "lineWidth": lineWidth
+    }
+    this.shapes.push(rectangle);
+    console.log(JSON.stringify(this.shapes, null, 2));
+    this.shapesCounter++;
   }
 
-  drawCircle(x, y, radius) {
+  drawCircle(x, y, radius, color, solidLine, lineWidth) {
     const type = "circle";
-    const shape = { type, x, y, radius };
-    this.shapes.push(shape);
+    let circle = {};
+    circle = {
+      "type": type,
+      "id": this.shapesCounter,
+      "x": x,
+      "y": y,
+      "radius": radius,
+      "color": color,
+      "solidLine": solidLine,
+      "lineWidth": lineWidth
+    }
+    this.shapes.push(circle);
+    console.log(JSON.stringify(this.shapes, null, 2));
+    this.shapesCounter++;
   }
 
-  drawArc(x, y, radius, startAngle, endAngle, direction = false) {
+  drawArc(x, y, radius, startAngle, endAngle, direction, color, solidLine, lineWidth) {
     const type = "arc";
-    const shape = { type, x, y, radius, startAngle, endAngle, direction };
-    this.shapes.push(shape);
+    let arc = {};
+    arc = {
+      "type": type,
+      "id": this.shapesCounter,
+      "x": x,
+      "y": y,
+      "radius": radius,
+      "startAngle": startAngle,
+      "endAngle": endAngle,
+      "direction": direction,
+      "color": color,
+      "solidLine": solidLine,
+      "lineWidth": lineWidth
+    }
+    this.shapes.push(arc);
+    console.log(JSON.stringify(this.shapes, null, 2));
+    this.shapesCounter++;
+  }
+
+  addText(text, x, y, fontSize, color, fontType) {
+    const type = "text";
+    let text = {};
+    text = {
+      "type": type,
+      "id": this.shapesCounter,
+      "text": text,
+      "x": x,
+      "y": y,
+      "fontSize": fontSize,
+      "color": color,
+      "fontType": fontType
+    }
+    this.shapes.push(text);
+    console.log(JSON.stringify(this.shapes, null, 2));
+    this.shapesCounter++;
   }
 
   scaleDimension(dimension) {
@@ -212,7 +275,15 @@ class DrawingCanvas {
   }
 
   angleInRadians(angle) {
-    return (parseFloat(angle) * Math.PI) / 180;
+    return (parseFloat(angle) * (Math.PI / 180));
+  }
+
+  setLineDash(isSolid) {
+    if (isSolid === false) {
+      this.ctx.setLineDash([5, 5]);
+    } else {
+      this.ctx.setLineDash([]);
+    }
   }
 
   // settings: lineWidth, color, solidLine, etc.
