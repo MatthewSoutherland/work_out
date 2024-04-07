@@ -20,7 +20,7 @@
     
     let [color, solidLine, lineWidth] = getDrawingDetails('line');
 
-    canvasMain.drawLine(x1, y1, x2, y2, color, solidLine, lineWidth);
+    canvasMain.drawLine(x1, x2, y1, y2, color, solidLine, lineWidth);
 
     //shapes[shapesCounter] = {
     //  type: "line",
@@ -187,6 +187,10 @@
   }
 
   function reDrawCanvas() {
+    canvasMain.drawCanvas();
+  }
+
+  function reDrawCanvas2() {
     console.log(JSON.stringify(shapes, null, 2));
 
     let coordsArray = [];

@@ -14,6 +14,10 @@ class DrawingCanvas {
     targetElement.appendChild(this.canvasElement);
 
     this.ctx = this.canvasElement.getContext("2d");
+    this.ctx.setLineDash([]);
+    this.ctx.strokeStyle = "black";
+    this.ctx.fillStyle = "black";
+    this.ctx.lineWidth = 1;
 
     // Apply styles directly to the canvasElement
     this.canvasElement.style.position = 'absolute';
@@ -36,7 +40,6 @@ class DrawingCanvas {
     this.shapesCounter = 0;
   }
 
-
   drawCanvas() {
     this.width = this.container.offsetWidth;
     this.height = this.container.offsetHeight;
@@ -50,10 +53,6 @@ class DrawingCanvas {
 
     let coords = this.getCoordsFromShapes();
     this.calculateScaleFactor(coords);
-    this.ctx.setLineDash([]);
-    this.ctx.strokeStyle = "black";
-    this.ctx.fillStyle = "black";
-    this.ctx.lineWidth = 1;
 
     let shiftX = (this.scaleXMid + this.left_right_shift) * this.pixelsPerInch * this.scaleFactor;
     let shiftY = (this.scaleYMid + this.up_down_shift) * this.pixelsPerInch * this.scaleFactor;
@@ -129,8 +128,10 @@ class DrawingCanvas {
   }
 
   drawShapes() {
+    console.log(this.shapes.length)
     for (let i = 0; i < this.shapes.length; i++) {
       let shape = this.shapes[i];
+      
       if (shape.type === "line") {
         const x1 = this.scaleDimension(shape.x1);
         const y1 = this.scaleDimension(shape.y1);
@@ -149,6 +150,9 @@ class DrawingCanvas {
         const y = this.scaleDimension(shape.y1);
         const width = this.scaleDimension(shape.width);
         const height = this.scaleDimension(shape.height);
+        this.ctx.strokeStyle = shape.color;
+        this.ctx.lineWidth = shape.lineWidth;
+        this.setLineDash(shape.solidLine);
         this.ctx.beginPath();
         this.ctx.rect(x, y, width, height);
         this.ctx.stroke();
@@ -157,6 +161,9 @@ class DrawingCanvas {
         const x = this.scaleDimension(shape.x);
         const y = this.scaleDimension(shape.y);
         const radius = this.scaleDimension(shape.radius);
+        this.ctx.strokeStyle = shape.color;
+        this.ctx.lineWidth = shape.lineWidth;
+        this.setLineDash(shape.solidLine);
         this.ctx.beginPath();
         this.ctx.arc(x, y, radius, 0, 2 * Math.PI, false);
         this.ctx.stroke();
@@ -167,9 +174,23 @@ class DrawingCanvas {
         const radius = this.scaleDimension(shape.radius);
         const startAngle = this.angleInRadians(shape.startAngle);
         const endAngle = this.angleInRadians(shape.endAngle);
+        this.ctx.strokeStyle = shape.color;
+        this.ctx.lineWidth = shape.lineWidth;
+        this.setLineDash(shape.solidLine);
         this.ctx.beginPath();
         this.ctx.arc(x, y, radius, startAngle, endAngle, shape.direction);
         this.ctx.stroke();
+        this.ctx.closePath();
+      } else if (shape.type === "text") {
+        const x = this.scaleDimension(shape.x);
+        const y = this.scaleDimension(shape.y);
+        const fontSize = shape.fontSize * this.scaleFactor;;
+        this.ctx.scale(1, -1);
+        this.ctx.font = `${fontSize}px ${shape.fontType}`;
+        this.ctx.textBaseline = "middle";
+        this.ctx.fillStyle = shape.color;
+        this.ctx.fillText(shape.text, x, y);
+        this.ctx.scale(1, -1);
         this.ctx.closePath();
       }
     }
@@ -254,8 +275,8 @@ class DrawingCanvas {
 
   addText(text, x, y, fontSize, color, fontType) {
     const type = "text";
-    let text = {};
-    text = {
+    let textObj = {};
+    textObj = {
       "type": type,
       "id": this.shapesCounter,
       "text": text,
@@ -265,7 +286,7 @@ class DrawingCanvas {
       "color": color,
       "fontType": fontType
     }
-    this.shapes.push(text);
+    this.shapes.push(textObj);
     console.log(JSON.stringify(this.shapes, null, 2));
     this.shapesCounter++;
   }
