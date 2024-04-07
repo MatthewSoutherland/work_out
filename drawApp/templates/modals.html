@@ -247,11 +247,11 @@
         <legend>Direction</legend>
         <div class="div-row">
           <label for="arc-cw">CW</label>
-          <input type="radio" id="arc-cw" name="direction" value="cw" checked />
+          <input type="radio" id="arc-cw" name="arc-direction" value="cw" checked />
         </div>
         <div class="div-row">
           <label for="arc-ccw">CCW</label>
-          <input type="radio" id="arc-ccw" name="direction" value="ccw" />
+          <input type="radio" id="arc-ccw" name="arc-direction" value="ccw" />
         </div>
       </fieldset>
       <button type="button" id="draw-arc-modal-button" class="primary-button modal-button" onclick="drawArc()">Draw Arc</button>
@@ -307,7 +307,7 @@
       <legend>Add Text</legend>
       <div class="div-row">
         <label for="text">Text</label>
-        <input type="text" class="text-input" value="Text" placeholder="text" autofocus/>
+        <input type="text" id="text-input" class="text-input" value="Text" placeholder="text" autofocus/>
       </div>
       <div class="div-row">
         <label for="text-x">Text X</label>

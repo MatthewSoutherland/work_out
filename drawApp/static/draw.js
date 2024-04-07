@@ -61,6 +61,7 @@
 
 
     [color, solidLine, lineWidth] = getDrawingDetails('rectangle');
+
     console.table({
     rx: rx,
     ry: ry,
@@ -95,47 +96,24 @@
     drawRectModal.style.display = "none";
   }
 
-  function fillRectangle() {
-    closeAllModals();
-
-    let rx = getElementValue("fill-x");
-    let ry = getElementValue("fill-y");
-    let rw = getElementValue("fill-w");
-    let rh = getElementValue("fill-h");
-
-    [color, solidLine, lineWidth] = getDrawingDetails();
-
-    shapes[shapesCounter] = {
-      type: "rect",
-      rx: rx,
-      ry: ry,
-      rw: rw,
-      rh: rh,
-      color: color,
-      solidLine: solidLine,
-      lineWidth: lineWidth,
-    };
-
-    let scaled_x = parseFloat(rx) * pixelsPerInch * scaleFactor;
-    let scaled_y = parseFloat(ry) * pixelsPerInch * scaleFactor;
-    let scaled_w = parseFloat(rw) * pixelsPerInch * scaleFactor;
-    let scaled_h = parseFloat(rh) * pixelsPerInch * scaleFactor;
-
-    ctx.beginPath();
-    ctx.fillRect(scaled_x, scaled_y, scaled_w, scaled_h);
-    ctx.stroke();
-    ctx.closePath();
-    shapesCounter++;
-  }
-
   function drawCircle() {
-    closeAllModals();
+    const drawCircleModal = document.getElementById("draw-circle-modal");
 
-    let cx = getElementValue("cx");
-    let cy = getElementValue("cy");
-    let cr = getElementValue("cr");
+    let cx = getElementValue("circle-xCenter");
+    let cy = getElementValue("circle-yCenter");
+    let cr = getElementValue("circle-radius");
 
-    [color, solidLine, lineWidth] = getDrawingDetails();
+    [color, solidLine, lineWidth] = getDrawingDetails('circle');
+
+    console.table({
+    cx: cx,
+    cy: cy,
+    cr: cr,
+    color: color,
+    solidLine: solidLine,
+    lineWidth: lineWidth,
+    });
+
 
     shapes[shapesCounter] = {
       type: "circle",
@@ -157,18 +135,31 @@
     ctx.closePath();
 
     shapesCounter++;
+    drawCircleModal.style.display = "none";
   }
 
   function drawArc() {
-    closeAllModals();
+    const drawArcModal = document.getElementById("draw-arc-modal");
 
-    let ax = getElementValue("ax");
-    let ay = getElementValue("ay");
-    let ar = getElementValue("ar");
-    let astart = getElementValue("as");
-    let aend = getElementValue("ae");
-    let direction = document.getElementById("cw").checked;
-    [color, solidLine, lineWidth] = getDrawingDetails();
+    let ax = getElementValue("arc-xCenter");
+    let ay = getElementValue("arc-yCenter");
+    let ar = getElementValue("arc-radius");
+    let astart = getElementValue("arc-startAngle");
+    let aend = getElementValue("arc-endAngle");
+    let direction = document.getElementById("arc-cw").checked;
+    [color, solidLine, lineWidth] = getDrawingDetails('arc');
+
+    console.table({
+    ax: ax,
+    ay: ay,
+    ar: ar,
+    astart: astart,
+    aend: aend,
+    direction: direction,
+    color: color,
+    solidLine: solidLine,
+    lineWidth: lineWidth,
+    });
 
     shapes[shapesCounter] = {
       type: "arc",
@@ -196,17 +187,28 @@
     ctx.closePath();
 
     shapesCounter++;
+    drawArcModal.style.display = "none";
   }
 
   function addText() {
-    closeAllModals();
+    const addTextModal = document.getElementById("add-text-modal");
 
-    let text = getElementValue("text");
-    let x = getElementValue("tx");
-    let y = getElementValue("ty");
-    let fontSize = getElementValue("tsize");
+    let text = getElementValue("text-input");
+    let x = getElementValue("text-x");
+    let y = getElementValue("text-y");
+    let fontSize = getElementValue("text-size");
+    let fontColor = getElementValue("font-draw-color");
+    let fontType = getElementValue("font-type");
 
-    [color, solidLine, lineWidth] = getDrawingDetails();
+    console.table({
+    text: text,
+    x: x,
+    y: y,
+    fontSize: fontSize,
+    color: fontColor,
+    fontType: fontType,
+    });
+
 
     shapes[shapesCounter] = {
       type: "text",
@@ -214,14 +216,13 @@
       x: x,
       y: y,
       fontSize: fontSize,
-      color: color,
-      solidLine: solidLine,
-      lineWidth: lineWidth,
+      color: fontColor,
+      fontType: fontType,
     };
 
     let scaledX = parseFloat(x) * pixelsPerInch * scaleFactor;
     let scaledY = parseFloat(y) * pixelsPerInch * scaleFactor;
-    let scaledFontSize = parseFloat(fontSize) * scaleFactor;
+    let scaledFontSize = parseFloat(fontSize) * pixelsPerInch * scaleFactor;
 
     ctx.scale(1, -1);
     ctx.font = `${scaledFontSize}px Arial`;
@@ -231,6 +232,7 @@
     ctx.scale(1, -1);
     ctx.closePath();
     shapesCounter++;
+    addTextModal.style.display = "none";
   }
 
   function closeAllModals() {
