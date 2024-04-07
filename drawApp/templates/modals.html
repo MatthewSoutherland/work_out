@@ -39,6 +39,20 @@
   </div>
 </div>
 
+<div id="fill-rectangle-modal-content" class="modal-content" style="display: none">
+  <div id="fill-rectangle-modal-header" class="modal-header">
+    <span class="close" id="fill-rectangle-span">&times;</span>
+  </div>
+  <div id="fill-rectangle-div" class="div-row modal-elements-div">
+    <h5>Fill Rectangle</h5>
+    <input type="text" id="rx" value="-1" placeholder="rx" />
+    <input type="text" id="ry" value="-1" placeholder="ry" />
+    <input type="text" id="rw" value="1" placeholder="width" />
+    <input type="text" id="rh" value="1" placeholder="height" />
+    <button type="button" id="fill-rectangle-modal-button" class="primary-button modal-button" onclick="fillRectangle()">Draw Rectangle</button>
+  </div>
+</div>
+
 <div id="draw-arc-modal-content" class="modal-content" style="display: none">
   <div id="draw-arc-modal-header" class="modal-header">
     <span class="close" id="draw-arc-span">&times;</span>

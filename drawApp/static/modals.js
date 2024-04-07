@@ -17,6 +17,12 @@
     drawRectModal.style.display = "block";
   }
 
+  function fillRectangleModalFunction() {
+    activeModal = "fill-rectangle";
+    dragElement(document.getElementById(`${activeModal}-modal-content`));
+    fillRectModal.style.display = "block";
+  }
+  
   function drawArcModalFunction() {
     activeModal = "draw-arc";
     dragElement(document.getElementById(`${activeModal}-modal-content`));
