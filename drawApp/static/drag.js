@@ -1,5 +1,6 @@
 
 function dragElement(elementId) {
+  const elmnt = document.getElementById(elementId);
     var pos1 = 0,
       pos2 = 0,
       pos3 = 0,
@@ -9,7 +10,6 @@ function dragElement(elementId) {
       document.getElementById(`${elementId}-header`).onmousedown = dragMouseDown;
     } else {
       // otherwise, move the DIV from anywhere inside the DIV:
-      const elmnt = document.getElementById(elementId);
       elmnt.onmousedown = dragMouseDown;
     }
 

@@ -20,7 +20,6 @@ function closeModal(elementId) {
     const elementId = "draw-rectangle-modal";
     activeModal = "draw-rectangle";
     dragElement(elementId);
-    drawRectModal.style.display = "block";
     document.getElementById(elementId).style.display = "block";
   }
 
