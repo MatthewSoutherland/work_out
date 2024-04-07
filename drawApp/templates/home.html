@@ -16,39 +16,7 @@
           <label for = "canvas-scale-factor">Set Canvas Scale:</label>
           <input type="number" id="canvas-scale-factor" name="canvas-scale-factor" value="1.5" min="0.1" max="5" step="0.1" onchange="reDrawCanvas()" />
         </div>
-        <!-- build a select box with colors: black (selected), red, blue, green, yellow-->
-        <div id="draw-color-div" class="div-row">
-            <label for="draw-color">Draw Color:</label>
-            <select id="draw-color" name="color">
-                <option value="black">Black</option>
-                <option value="red">Red</option>
-                <option value="blue">Blue</option>
-                <option value="green">Green</option>
-                <option value="yellow">Yellow</option>
-            </select>
-        </div>
-        <!-- build radio button for solid - dashed line -->
-        <div class="div-row" id="solid-line-div">
-            <div>
-                <label for="solid">Solid Line</label>
-                <input type="radio" id="solid-line" name="line" value="solid" checked />
-            </div>
-            <div>
-                <label for="dashed">Dashed Line</label>
-                <input type="radio" id="dashed-line" name="line" value="dashed" />
-            </div>
-        </div>
-        <!-- build a select box with line width: 1 (selected), 2, 3, 4, 5-->
-        <div id="line-width-div" class="div-row">
-          <label for="line-width">Line Width:</label>
-          <select id="line-width" name="line-width">
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-          </select>
-        </div>
+       
       </div>
 
       {% include 'modals.html' %}
