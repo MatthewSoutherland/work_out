@@ -1,0 +1,27 @@
+Flask Environment Variables:
+----------------------------
+FLASK_APP is not set
+FLASK_ENV is not set
+FLASK_DEBUG is not set
+FLASK_RUN_HOST is not set
+FLASK_RUN_PORT is not set
+FLASK_RUN_CERT is not set
+FLASK_RUN_KEY is not set
+DATABASE_URL is not set
+SQLALCHEMY_DATABASE_URI is not set
+MAIL_SERVER is not set
+MAIL_PORT is not set
+MAIL_USE_TLS is not set
+MAIL_USE_SSL is not set
+MAIL_USERNAME is not set
+MAIL_PASSWORD is not set
+MAIL_DEFAULT_SENDER is not set
+SECRET_KEY is not set
+SECURITY_PASSWORD_SALT is not set
+SESSION_TYPE is not set
+SESSION_PERMANENT is not set
+SESSION_FILE_DIR is not set
+SESSION_FILE_THRESHOLD is not set
+LANGUAGES is not set
+LOGGING_CONFIG is not set
+APPLICATION_ROOT is not set

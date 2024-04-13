@@ -1,0 +1,171 @@
+EIA, NC files:
+    - MIME Types: When serving files over the web, servers often use the file extension to determine the MIME type, 
+    which tells the browser how to handle the file. If you're using a custom file extension, you might need to configure 
+    your server to associate your custom extension with the correct MIME type.
+
+line-left frontend:
+    - arcs are touching lines.
+    - arcs are tangent or legal.
+    - highlight invalid fields in shape.
+    - division by zero error on line(1, 0) line2(1, 0)
+
+face-mill:
+    - change vice pictures to other various cutting direction.
+    - vice direction or cutting direction should be in tool data
+    - validate -> stock - stock left > 0
+    - validate -> tool_radius - nose_radius > 0
+
+tooling:
+    - add logic for automatic calculations
+    - tools need a list of units they run in
+
+other:
+    - none of submit buttons have type attribute.
+    - insert unicode characters such as diameter(\u00D8), degrees(\u00B0)
+    - build a shell script that takes a name and builds entire flask directory system.
+    - build python program or other that will look at all the function in a file and do something
+
+UI:
+    - if work offset is the same as the previous, safe_height -> M01. else: G28 G91 Z0. program end G28 G91 X0. Y0.
+    - create an array that stores the element id's in which the input box is turned red due to invalid value. Remove the 
+        class that turns the box red in the function reset elements.
+
+downloads and file deletion:
+    -Download Confirmation: Implement a mechanism where the client-side confirms back to the server once the download is complete. Only then trigger the deletion process.
+    - current process works for now in development, but is a timed delete. If there is a large file or bad internate connection the files could be deleted before downloading.
+
+machine-db 
+    - add H and D to g-code 
+    - thru spindle air 
+    - M9 universal
+    - need rapid speed for graphics
+
+chamfer path 
+    - width clearance parameter 
+        - chamfer tip cannot be greater than hole diameter
+    - z - axial clearance parameter 
+    - chamfer hypotneus greater than feature hypotneus
+        - center chamfer edge to feature hypotneus
+    - there should be logic for operationGraphics on whether its a cannedCycle or not
+    
+circle mill
+    - reject any tool cutting a diameter with less than .01 difference in diameter vs tool diameter
+    - current diameter cannot be larger than finish diameter
+    - what is the arc off in circle mill finisher
+    - in roughing path you are going from a G03 to a G00, is this legal
+
+
+drilling 
+    - add a add tip checkbox, this will have an angle input and calculate tip height and adjust drill depth
+    - drilling and other point machining, add center drill, add spot drill
+    
+reaming 
+    - jig bore, circle mill options.
+
+unit parameters
+    - circle mill
+        - z_feed_rate, fast_feed_rate
+    - tornado mill
+        - z start circling
+
+global parameters 
+    - drill automatically renders thru-coolant -> tooling air/coolants
+    - chamfer tool specs, edge break value (.01)
+    - feed mill -> depth auto calculation, feed rate
+
+global variables:
+    - look at reset function and globals
+
+element creation 
+    - feature data must be filled in to generate tools
+    - create a function that looks at feature data
+    - grabbing the id of material-dropdown, should grab program_details
+
+program ending with M99 or M30
+
+hint_images:
+    -r-plane
+
+validation:
+    - created a new class reset-0, The value of the input needs to be reset to zero
+    - shape object inputs need validation
+    - validate rectange x and y has distance
+    - coolant-air validation
+    - less than diameter -> hole diameter less than current diameter
+    - if safe_height is in list [drilling, taping, reaming, boring] -> validate higher than face. else -> validate higher than stock.
+
+coordinate_locations container:
+    - could implement a function call that when you tab to xCenter line it will try to make the calculation for you.
+    - test submit button to make sure it wont run with at least one coordinate
+    - shape coordinates need a look and possibly a rebuild
+    - raw coordinates should be json
+
+settings notes:
+    line-left: end point of tool radius + .1 could be a setting
+
+modals:
+    - go thru all styles and consolidate
+    - when a modal is selected have it close all other modals
+    - drill modal you should be able to drag and have up while typing in drill diameter
+    - maybe in the units modal under the view details button, you could have details to the left and a little canvas drawing to the right.
+    - span close function can replace all modal span close logic. Call closeModal(modal element id) in the html -> <span onclick="closeModal(id)"
+
+graphics:
+    - add styling to buttons when clicked
+    - graphics should be rebuilt so that it takes data and pulls workDetails, toolData, ect.. out of it.
+    - no comp draw profile doesnt draw at tool edge
+    - test cw arc length
+    - will have to test run time
+    - draw profile, comp_on: incorrect line at end of tool path rapiding back to center
+    - why are the x tick marks not at zero when hole is programmed on zero?
+    - shape, run, and step buttons need validation to run. if unitMasterData is empty return
+
+function implementation:
+    - created def calculate_depth_cuts. This can be used in many different milling operations
+
+g-code generation:
+    - add h's and d's with tooling based on machine definition
+    - change database so you dont have to insert M incase there is no selection
+    - add index to startup line, check database for index call, will have to add angle to program
+    - feed rate (ipm) needs a trailing decimal if its a whole number
+
+current focus:
+    - remove static files not used 
+    - make event lisner file maybe? 
+    - prove out required fields on added tools.
+    - fix facemill finish path code
+    - chamfering no decimal with z
+    - one of tool paths was missing the m in the m-code
+    - chamfering not using feeds and speeds
+    - chamfer needs G00 to rapid out when cut is done
+    - is dataObject grabbing elements from tool div? drilling-zFace is both a feature and a tool value.
+    - make a list of each units fieldsets, feature_data, tools -> tool_data
+    - program depth cuts for circle mill finisher
+    - add math validation in back end to alert front end
+    - additional tool path options, start, end, helix entry
+    
+
+
+program:
+    - maybe keep up to 10 programs in downloads?
+    - perhaps in the tool list and graphics, an option to change a tools setting can be done and the g-code overwritten
+    - rearrange icons when program is prioritized
+    - lets get different icons for drill, reamer, tap, boring, chamfer, endmill, facemill, other
+    - when you hit the update button in the program-priorities modal something should happen
+        -reshuffle the order
+    - make sure the initial passing of file name for program_details is secure
+    - drill safe_height too low, drill depth not negative from face
+    - depth, validate positive number
+    - fix depth in other canned cycles
+    - possibly consolidate the get file routes into one function that takes as argument so it can handle it.
+    - some of the modals second div do not have a class of modal-content
+    - in apiService.js getFileMasterData has no error handling, same with getFileMasterDataAndCopy
+    - add workDetails is null -> return to rest of units
+    - unit = currentUnitVisability
+    - build a function to validate featureData when checkbox is clicked
+    - checkboxes need to run a function that validates feature data. 
+    - if no checkboxes are checked, return, alert no tooling
+    - make sure that when rendering a file that both the file and the json file exists, if not delete the file
+    - add zFace value to line left
+
+check out tool lego spike

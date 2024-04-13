@@ -1,0 +1,19 @@
+will this code work in js? trying to apply a different style on different images:
+
+const hintImageLargeClass = ["static/hint_images/r_plane.png", "static/hint_images/retract_height.png"]
+
+const hintInputs = document.querySelectorAll("[data-hint-image]");
+
+
+  hintInputs.forEach(input => {
+    input.addEventListener('mouseover', (e) => {
+        const imgSrc = input.getAttribute('data-hint-image');
+        if (imgSrc in hintImageLargeClass) {
+            hintImageDiv.classList.add('large-hint-image');
+        }
+
+        showHint(imgSrc, input);
+    });
+
+      input.addEventListener('mouseout', hideHint);
+  });

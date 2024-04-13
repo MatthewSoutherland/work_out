@@ -1,0 +1,42 @@
+Flask Environment Variables Reference:
+
+1. Flask Configuration:
+   - FLASK_APP: The entry point of your application; where your Flask app is defined (e.g., `app.py`).
+   - FLASK_ENV: The environment your app is running in, e.g., development, production.
+   - FLASK_DEBUG: Enable/disable debug mode. Set to 1 to enable debug mode.
+   - FLASK_RUN_HOST: The hostname to listen on (set this to '0.0.0.0' to have the server available externally).
+   - FLASK_RUN_PORT: The port of the web server.
+   - FLASK_RUN_CERT: Specify a certificate file to use HTTPS.
+   - FLASK_RUN_KEY: The private key for your certificate to use HTTPS.
+
+2. Database Configuration (Common for Flask-SQLAlchemy):
+   - DATABASE_URL: Full URL to your database.
+   - SQLALCHEMY_DATABASE_URI: Full URI for the SQLAlchemy connection (often set to the value of DATABASE_URL).
+
+3. Email Configuration (Common for Flask-Mail):
+   - MAIL_SERVER: Default SMTP server for sending mail.
+   - MAIL_PORT: Default SMTP port.
+   - MAIL_USE_TLS: Enable/disable Transport Layer Security.
+   - MAIL_USE_SSL: Enable/disable Secure Sockets Layer.
+   - MAIL_USERNAME: Username for SMTP server.
+   - MAIL_PASSWORD: Password for SMTP server.
+   - MAIL_DEFAULT_SENDER: Default sender for emails.
+
+4. Security Keys:
+   - SECRET_KEY: A secret key used for securely signing the session cookie.
+   - SECURITY_PASSWORD_SALT: Salt used for cryptographic operations.
+
+5. Session Configuration:
+   - SESSION_TYPE: The type of session interface to use.
+   - SESSION_PERMANENT: Whether the session cookie should be permanent or not.
+   - SESSION_FILE_DIR: Directory to store session files if the session type is set to filesystem.
+   - SESSION_FILE_THRESHOLD: The maximum number of session files to keep.
+
+6. Internationalization and Localization:
+   - LANGUAGES: Available languages for the system as a comma-separated list.
+
+7. Other Operational Configurations:
+   - LOGGING_CONFIG: Path to a logging configuration file (in JSON or YAML format).
+   - APPLICATION_ROOT: Set the application root path.
+
+

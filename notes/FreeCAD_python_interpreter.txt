@@ -1,0 +1,11 @@
+create a need environment variable to access FreeCAD's source code in vscode
+
+For 'Variable name', enter PYTHONPATH.
+For 'Variable value', enter C:\Program Files\FreeCAD 0.20\bin. (or your systems path to the FreeCAD.dll file)
+
+now you will be able to: import FreeCAD
+
+Download python 3.8.10 // this is the version FreeCAD uses. you will need that interpreter for your environment
+
+bash: py -3.8 -m venv env
+

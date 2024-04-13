@@ -1,0 +1,21 @@
+Tooling feeds, speeds, depth cuts:
+    Material
+    tool diameter / HOH
+        5:1 -> primarly milling
+    tool design
+        z_carb -> channel
+        HEM -> 5% overlap -> radial chip thinning
+        specific to Material
+    inserted tool = .01 per tooth
+        saw cutter = .005 per tooth
+        facemills
+            feedmill -> ridged workholding, shitty Material
+            standard -> roughing -> button cutter
+
+Tool features
+    drill: [flute length, diameter, tip angle, thre coolant, design]
+    chamfer: [included angle, tip width, diameter]
+    endmill: [flute length, diameter, nose radius, design]
+    facemill: [ insert radius, # of inserts, insert height, design]
+    boring bar: [idk]
+    reamers: [diameter, [high speed, carbide coated]]

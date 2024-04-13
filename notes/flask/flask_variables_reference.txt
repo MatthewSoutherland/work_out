@@ -1,0 +1,56 @@
+
+
+Flask Variables Reference:
+
+1. Flask Application Configuration:
+   - SECRET_KEY: A secret key for session signing.
+   - DEBUG: Enable/disable debug mode
+   - TESTING: Enable/disable testing mode
+   - SESSION_COOKIE_NAME: The name of the session cookie
+
+2. Request Data (from flask.request):
+   - form: A MultiDict with form parameters submitted during a POST or PUT request.
+   - args: A MultiDict with parsed contents of query string during a GET request.
+   - values: A CombinedMultiDict merging results of form and args.
+   - json: Returns a Python dictionary from the JSON data received in the request body.
+   - headers: A dictionary-like object containing all received headers.
+   - method: HTTP method used (e.g., "GET", "POST").
+   - files: A MultiDict containing uploaded files.
+   - cookies: A dictionary of cookies included in the request.
+   - data: Contains the incoming request data as a string.
+   - path: Requested path.
+   - full_path: Requested path, including the query string.
+   - script_root: The root path of the application.
+   - url: The complete URL of the request.
+   - base_url: The URL including path but not query string or parameters.
+   - url_root: The full URL root (scheme + netloc + script_root).
+   - blueprints: A dict of all registered blueprints.
+
+3. Response Objects (flask.make_response()):
+   - data: The response body.
+   - status: The HTTP status code for the response.
+   - headers: A list of header tuples to attach to the response.
+
+4. Session Variables (from flask.session):
+   - Use like a dict to store values that persist between requests from the same client.
+
+5. URL Building (flask.url_for()):
+   - Function name: The endpoint of the URL (name of the function).
+   - **values: Variable arguments that the function needs to generate the URL.
+
+6. Other Useful Globals:
+   - g: A namespace object for storing data during an application context.
+   - current_app: The application instance for the active application.
+
+7. Error Handling:
+   - abort: Raises an HTTPException for the given HTTP status code.
+   - get_flashed_messages: Retrieve messages with get_flashed_messages() that were “flashed” during the previous request.
+
+8. Logging:
+   - app.logger: Standard Python logger for logging messages.
+
+
+BASH:
+cat > flask_variables_reference.txt <<EOL
+(Paste the content here)
+EOL

@@ -1,0 +1,10 @@
+
+set FLASK_ENV=development
+set FLASK_DEBUG=true
+export FLASK_DEBUG=true
+
+black notes:
+
+black --line-length 80 example.py
+https://black.readthedocs.io/en/stable/usage_and_configuration/the_basics.html
+

@@ -1,0 +1,36 @@
+SEARCH FOR A NAME IN ALL FILES IN A DIRECTORY 
+
+1. Open the Search Panel
+Ctrl + Shift + F (Windows/Linux) or Cmd + Shift + F (macOS).
+
+2. Enter Your Search Query
+In the search bar at the top of the Search panel, type the name or string you want to search for.
+
+3. Configure Your Search (Optional)
+three dots under search Query
+
+Files to Include: If you want to limit your search to a specific directory, you can specify the directory path in the “Files to include” field. 
+For example, if you want to search only within the src directory, you would enter src/ in this field.
+
+Files to Exclude: You can also exclude certain files or directories from your search by using the “Files to exclude” field. 
+This is useful if you want to ignore certain file types or directories. 
+You can use patterns like **/node_modules/* to exclude all files within node_modules directories.
+Match Case: Click on the Aa button if you want your search to be case-sensitive.
+Match Whole Word: Click on the ab| button if you want to match only whole words.
+Use Regular Expression: Click on the .* button if you want to use regular expressions in your search.
+
+4. Start the Search
+After entering your search criteria, press Enter or click on the search icon (magnifying glass) next to the search bar.
+VS Code will search all files in the specified directory (or the entire workspace if no directory is specified) and list all occurrences in the Search panel.
+
+5. Review the Results
+The Search panel will display a list of files containing the search term, along with the number of matches in each file. 
+You can click on any result to open the file and navigate directly to the occurrence of the search term.
+You can navigate through occurrences within a file using the arrow buttons in the Search panel or by using the F4 (next) and Shift + F4 (previous) shortcuts.
+
+6. Replace (Optional)
+If you want to replace the found instances with a different text, you can use the “Replace” field in the Search panel. 
+Enter the new text and then click on the replace icon (looks like a chevron with a box) next to each occurrence to replace individual instances, 
+or click “Replace All” to replace all occurrences across all files.
+
+OPEN IN EDITOR WILL SHOW YOU ALL THE FILES AND LINE NUMBERS
