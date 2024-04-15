@@ -22,3 +22,4 @@ class TestingConfig(Config):
     """Testing configuration."""
 
     TESTING = True
+

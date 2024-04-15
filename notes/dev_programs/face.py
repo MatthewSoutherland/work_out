@@ -1,7 +1,7 @@
 import math
 
 # import app.tool_paths.face_mill_math as fm_math
-from fm_math_cl import FaceMillMath as fm_math
+from notes.dev_programs.fm_math_cl import FaceMillMath as fm_math
 
 
 def first_line_feed(w_cut, d_cut, formatted_cut_to_line, ipm):
