@@ -7,3 +7,6 @@ build c# app
 build complier 
 linux 
 testing
+
+notes:
+in production if your server is under load, js garabage collection can make a huge difference.
