@@ -10,3 +10,6 @@ testing
 
 notes:
 in production if your server is under load, js garabage collection can make a huge difference.
+
+reamer feeds/speeds:
+https://www.hillindustrialtools.com/pages/hss-reamer-speeds-feeds#
