@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Three.js on Flask</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script src="{{ url_for('static', filename='js/three.min.js') }}"></script>
+</head>
+<body>
+    <div id="webgl-output"></div>
+    <script src="{{ url_for('static', filename='main.js') }}"></script>
+</body>
+</html>
