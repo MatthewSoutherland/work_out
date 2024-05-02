@@ -61,45 +61,7 @@ class Vector_Math:
         magnitude = Vector_Math.magnitude(vector)
         return [vector[0] / magnitude, vector[1] / magnitude]
 
-    @staticmethod
-    def angle_between_vectors(vector1, vector2):
-        dot_product = Vector_Math.dot_product(vector1, vector2)
-        magnitude1 = Vector_Math.magnitude(vector1)
-        magnitude2 = Vector_Math.magnitude(vector2)
-        return dot_product / (magnitude1 * magnitude2)
-
-    @staticmethod
-    def is_parallel(vector1, vector2):
-        return Vector_Math.cross_product(vector1, vector2) == 0
-
-    @staticmethod
-    def is_perpendicular(vector1, vector2):
-        return Vector_Math.dot_product(vector1, vector2) == 0
-
-    @staticmethod
-    def projection(vector1, vector2):
-        scalar = (
-            Vector_Math.dot_product(vector1, vector2)
-            / Vector_Math.magnitude(vector2) ** 2
-        )
-        return Vector_Math.scalar_product(vector2, scalar)
-
-    @staticmethod
-    def rejection(vector1, vector2):
-        return Vector_Math.subtract_vectors(
-            vector1, Vector_Math.projection(vector1, vector2)
-        )
-
-    @staticmethod
-    def component(vector1, vector2):
-        return Vector_Math.projection(vector1, vector2)
-
-    @staticmethod
-    def angle_between_vector_and_axis(vector):
-        return Vector_Math.angle_between_vectors(vector, [1, 0])
-
 
 line_one = [1, 2]
 line_two = [2, 1]
 print(Vector_Math.add_vectors(line_one, line_two))  # Output: [3, 3]
-print(Vector_Math.angle_between_vectors(line_one, line_two))  # Output: 0.8
